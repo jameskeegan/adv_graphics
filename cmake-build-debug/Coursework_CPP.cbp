@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Coursework_CPP"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/kegof/Documents/GitHub/adv_graphics/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/kegof/Documents/GitHub/adv_graphics/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/kegof/Documents/GitHub/adv_graphics/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/kegof/Documents/GitHub/adv_graphics/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/kegof/Documents/GitHub/adv_graphics/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Coursework_CPP">
+				<Option output="C:/Users/kegof/Documents/GitHub/adv_graphics/cmake-build-debug/Coursework_CPP.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/kegof/Documents/GitHub/adv_graphics/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/kegof/Documents/GitHub/adv_graphics/."/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/kegof/Documents/GitHub/adv_graphics/cmake-build-debug/Makefile&quot;  VERBOSE=1 Coursework_CPP"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/kegof/Documents/GitHub/adv_graphics/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/kegof/Documents/GitHub/adv_graphics/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/kegof/Documents/GitHub/adv_graphics/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Coursework_CPP/fast">
+				<Option output="C:/Users/kegof/Documents/GitHub/adv_graphics/cmake-build-debug/Coursework_CPP.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/kegof/Documents/GitHub/adv_graphics/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/kegof/Documents/GitHub/adv_graphics/."/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/kegof/Documents/GitHub/adv_graphics/cmake-build-debug/Makefile&quot;  VERBOSE=1 Coursework_CPP/fast"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/kegof/Documents/GitHub/adv_graphics/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/kegof/Documents/GitHub/adv_graphics/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/kegof/Documents/GitHub/adv_graphics/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/kegof/Documents/GitHub/adv_graphics/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/kegof/Documents/GitHub/adv_graphics/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/kegof/Documents/GitHub/adv_graphics/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/kegof/Documents/GitHub/adv_graphics/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/kegof/Documents/GitHub/adv_graphics/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/kegof/Documents/GitHub/adv_graphics/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/kegof/Documents/GitHub/adv_graphics/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/kegof/Documents/GitHub/adv_graphics/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/kegof/Documents/GitHub/adv_graphics/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/kegof/Documents/GitHub/adv_graphics/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/bunny/data/README">
+			<Option target="Coursework_CPP"/>
+		</Unit>
+		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/bunny/data/bun.conf">
+			<Option target="Coursework_CPP"/>
+		</Unit>
+		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/bunny/data/bun000.ply">
+			<Option target="Coursework_CPP"/>
+		</Unit>
+		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/bunny/data/bun045.ply">
+			<Option target="Coursework_CPP"/>
+		</Unit>
+		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/bunny/data/bun090.ply">
+			<Option target="Coursework_CPP"/>
+		</Unit>
+		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/bunny/data/bun180.ply">
+			<Option target="Coursework_CPP"/>
+		</Unit>
+		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/bunny/data/bun270.ply">
+			<Option target="Coursework_CPP"/>
+		</Unit>
+		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/bunny/data/bun315.ply">
+			<Option target="Coursework_CPP"/>
+		</Unit>
+		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/bunny/data/chin.ply">
+			<Option target="Coursework_CPP"/>
+		</Unit>
+		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/bunny/data/ear_back.ply">
+			<Option target="Coursework_CPP"/>
+		</Unit>
+		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/bunny/data/top2.ply">
+			<Option target="Coursework_CPP"/>
+		</Unit>
+		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/bunny/data/top3.ply">
+			<Option target="Coursework_CPP"/>
+		</Unit>
+		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/bunny/reconstruction/README">
+			<Option target="Coursework_CPP"/>
+		</Unit>
+		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/bunny/reconstruction/bun_zipper.ply">
+			<Option target="Coursework_CPP"/>
+		</Unit>
+		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/bunny/reconstruction/bun_zipper_res2.ply">
+			<Option target="Coursework_CPP"/>
+		</Unit>
+		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/bunny/reconstruction/bun_zipper_res3.ply">
+			<Option target="Coursework_CPP"/>
+		</Unit>
+		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/bunny/reconstruction/bun_zipper_res4.ply">
+			<Option target="Coursework_CPP"/>
+		</Unit>
+		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/bunny_zipper.kcply">
+			<Option target="Coursework_CPP"/>
+		</Unit>
+		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/colour.h">
+			<Option target="Coursework_CPP"/>
+		</Unit>
+		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/directional_light.cpp">
+			<Option target="Coursework_CPP"/>
+		</Unit>
+		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/directional_light.h">
+			<Option target="Coursework_CPP"/>
+		</Unit>
+		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/hit.h">
+			<Option target="Coursework_CPP"/>
+		</Unit>
+		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/image_1024.ppm">
+			<Option target="Coursework_CPP"/>
+		</Unit>
+		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/image_64.ppm">
+			<Option target="Coursework_CPP"/>
+		</Unit>
+		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/light.h">
+			<Option target="Coursework_CPP"/>
+		</Unit>
+		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/main.cpp">
+			<Option target="Coursework_CPP"/>
+		</Unit>
+		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/material.h">
+			<Option target="Coursework_CPP"/>
+		</Unit>
+		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/object.h">
+			<Option target="Coursework_CPP"/>
+		</Unit>
+		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/phong.cpp">
+			<Option target="Coursework_CPP"/>
+		</Unit>
+		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/phong.h">
+			<Option target="Coursework_CPP"/>
+		</Unit>
+		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/polymesh.cpp">
+			<Option target="Coursework_CPP"/>
+		</Unit>
+		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/polymesh.h">
+			<Option target="Coursework_CPP"/>
+		</Unit>
+		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/ray.h">
+			<Option target="Coursework_CPP"/>
+		</Unit>
+		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/scene.cpp">
+			<Option target="Coursework_CPP"/>
+		</Unit>
+		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/scene.h">
+			<Option target="Coursework_CPP"/>
+		</Unit>
+		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/sphere.cpp">
+			<Option target="Coursework_CPP"/>
+		</Unit>
+		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/sphere.h">
+			<Option target="Coursework_CPP"/>
+		</Unit>
+		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/transform.h">
+			<Option target="Coursework_CPP"/>
+		</Unit>
+		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/vector.h">
+			<Option target="Coursework_CPP"/>
+		</Unit>
+		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/vertex.h">
+			<Option target="Coursework_CPP"/>
+		</Unit>
+		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

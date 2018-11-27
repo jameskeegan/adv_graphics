@@ -1,0 +1,3 @@
+C:/Users/kegof/Documents/GitHub/adv_graphics/cmake-build-debug/CMakeFiles/Coursework_CPP.dir
+C:/Users/kegof/Documents/GitHub/adv_graphics/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/kegof/Documents/GitHub/adv_graphics/cmake-build-debug/CMakeFiles/rebuild_cache.dir
