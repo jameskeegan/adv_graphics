@@ -85,9 +85,22 @@ int main(int argc, char *argv[])
 	bp.specular.b = 0.0f;
 	bp.power = 40.0f;
 
+	Phong sp2;
+
+	sp2.ambient.r = 0.0f;
+	sp2.ambient.g = 0.2f;
+	sp2.ambient.b = 0.0f;
+	sp2.diffuse.r = 0.0f;
+	sp2.diffuse.g = 0.4f;
+	sp2.diffuse.b = 0.0f;
+	sp2.specular.r = 0.0f;
+	sp2.specular.g = 0.4f;
+	sp2.specular.b = 0.0f;
+	sp2.power = 40.0f;
+
 	DirectionalLight *dl;
 	
-	dl = new DirectionalLight(Vector(1.0f, -1.0f, 1.0f),Colour(0.5f, 0.5f, 0.5f, 0.0f));
+	dl = new DirectionalLight(Vector(0.0f, 1.0f, 0.0f),Colour(0.5f, 0.5f, 0.5f, 0.0f));
 
 	dl->scene = &scene;
 
@@ -102,20 +115,14 @@ int main(int argc, char *argv[])
 
 	//PolyMesh *bunny = new PolyMesh((char *) mesh_name, transform);
 
-	Sphere *sphere = new Sphere(Vertex(-1,-1,5), 1);
-	Sphere *sphere2 = new Sphere(Vertex(1,1,5), 1);
-	Sphere *sphere3 = new Sphere(Vertex(-1,1,5), 1);
-	Sphere *sphere4 = new Sphere(Vertex(1,-1,5), 1);
+	Sphere *sphere = new Sphere(Vertex(0,1,5), 1);
+	Sphere *sphere2 = new Sphere(Vertex(0,-1,5), 1);
 
 	sphere->material = &bp;
-	sphere2->material = &bp;
-	sphere3->material = &bp;
-	sphere4->material = &bp;
+	sphere2->material = &sp2;
 	//bunny->material = &bp;
 	//scene.object_list = bunny;
 	sphere->next = sphere2;
-	sphere2->next = sphere3;
-	sphere3->next = sphere4;
 	scene.object_list = sphere;
 
 	for(y = 0; y < YSIZE; y += 1)

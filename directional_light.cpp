@@ -6,6 +6,7 @@
  */
 
 #include "directional_light.h"
+#include "scene.h"
 
 DirectionalLight::DirectionalLight()
 {
@@ -24,6 +25,26 @@ DirectionalLight::DirectionalLight(Vector dir, Colour col)
 bool DirectionalLight::get_direction(Vertex &surface, Vector &dir)
 {
 	dir = direction;
+
+	Ray shadow_ray = Ray();
+
+    shadow_ray.position.x = surface.x - 0.001*direction.x;
+    shadow_ray.position.y = surface.y - 0.001*direction.y;
+    shadow_ray.position.z = surface.z - 0.001*direction.z;
+
+    shadow_ray.direction.x = -direction.x;
+    shadow_ray.direction.y = -direction.y;
+    shadow_ray.direction.z = -direction.z;
+
+    Hit shadow_hit;
+    scene->trace(shadow_ray, scene->object_list, shadow_hit);
+
+	// returns true if light is visible to object, false if object is blocked
+	return !shadow_hit.flag;
+
+
+
+#include "scene.h" at the top
 
 	// TODO: this is where the shadow rays should be generated.
 	// light contains a refence to the scene so that you can check
