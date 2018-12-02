@@ -7,6 +7,8 @@
 
 #include "scene.h"
 
+using namespace std;
+
 Scene::Scene()
 {
 	object_list = nullptr;
@@ -103,9 +105,28 @@ void Scene::raytrace(Ray ray, int level, Object *objects, Light *lights, Colour 
 		}
 
 		// TODO: compute reflection ray if material supports it.
-		if(1)
-		{
-		}
+		Ray reflection;
+		Colour reflection_colour = Colour();
+
+		// create reflection ray direction
+		float incident = ray.direction.dot(best_hit.normal);
+		reflection.direction.x = ray.direction.x - 2.0f * incident * best_hit.normal.x;
+		reflection.direction.y = ray.direction.y - 2.0f * incident * best_hit.normal.y;
+		reflection.direction.z = ray.direction.z - 2.0f * incident * best_hit.normal.z;
+
+		// create reflection ray's position
+		reflection.position.x = best_hit.position.x + 0.001f * reflection.direction.x;
+		reflection.position.y = best_hit.position.y + 0.001f * reflection.direction.y;
+		reflection.position.z = best_hit.position.z + 0.001f * reflection.direction.z;
+
+		// recursive call, going down as many layers as said to reflect
+		raytrace(reflection, level, objects, lights, reflection_colour);
+
+		// add reflection colour onto main colour
+		colour.r += 0.3f * reflection_colour.r;
+		colour.g += 0.3f * reflection_colour.g;
+		colour.b += 0.3f * reflection_colour.b;
+
 
 		// TODO: compute refraction ray if material supports it.
 		if(1)

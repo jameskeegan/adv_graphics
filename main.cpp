@@ -21,8 +21,8 @@
 #include <fstream>
 using namespace std;
 
-#define XSIZE 512
-#define YSIZE 512
+#define XSIZE 1024
+#define YSIZE 1024
 
 Colour framebuffer[YSIZE][XSIZE];
 
@@ -46,7 +46,7 @@ void write_framebuffer()
 	int x, y;
 	ofstream fout;
 	
-	fout.open("image_64.ppm");
+	fout.open("image_1024.ppm");
 
 	fout << "P6\r" << XSIZE << " " << YSIZE << "\r255\r";
 
@@ -100,7 +100,7 @@ int main(int argc, char *argv[])
 
 	DirectionalLight *dl;
 	
-	dl = new DirectionalLight(Vector(0.0f, 1.0f, 0.0f),Colour(0.5f, 0.5f, 0.5f, 0.0f));
+	dl = new DirectionalLight(Vector(0.0f, 0.0f, 1.0f),Colour(0.5f, 0.5f, 0.5f, 0.0f));
 
 	dl->scene = &scene;
 
@@ -115,8 +115,8 @@ int main(int argc, char *argv[])
 
 	//PolyMesh *bunny = new PolyMesh((char *) mesh_name, transform);
 
-	Sphere *sphere = new Sphere(Vertex(0,1,5), 1);
-	Sphere *sphere2 = new Sphere(Vertex(0,-1,5), 1);
+	Sphere *sphere = new Sphere(Vertex(0,-1,3), 1);
+	Sphere *sphere2 = new Sphere(Vertex(0,1,3), 1);
 
 	sphere->material = &bp;
 	sphere2->material = &sp2;
@@ -147,7 +147,7 @@ int main(int argc, char *argv[])
 
 			root.direction.normalise();
 
-			scene.raytrace(root, 1, scene.object_list, scene.light_list, framebuffer[y][x]);
+			scene.raytrace(root, 4, scene.object_list, scene.light_list, framebuffer[y][x]);
 		}
    }
 
