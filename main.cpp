@@ -85,6 +85,8 @@ int main(int argc, char *argv[])
 	bp.specular.b = 0.0f;
 	bp.power = 40.0f;
 
+	bp.set_reflection(0.5f);
+
 	Phong sp2;
 
 	sp2.ambient.r = 0.0f;
@@ -97,6 +99,8 @@ int main(int argc, char *argv[])
 	sp2.specular.g = 0.4f;
 	sp2.specular.b = 0.0f;
 	sp2.power = 40.0f;
+
+	sp2.set_reflection(0.5f);
 
 	DirectionalLight *dl;
 	

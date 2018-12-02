@@ -123,10 +123,9 @@ void Scene::raytrace(Ray ray, int level, Object *objects, Light *lights, Colour 
 		raytrace(reflection, level, objects, lights, reflection_colour);
 
 		// add reflection colour onto main colour
-		colour.r += 0.3f * reflection_colour.r;
-		colour.g += 0.3f * reflection_colour.g;
-		colour.b += 0.3f * reflection_colour.b;
-
+		colour.r += best_hit.what->material->get_reflection() * reflection_colour.r;
+		colour.g += best_hit.what->material->get_reflection() * reflection_colour.g;
+		colour.b += best_hit.what->material->get_reflection() * reflection_colour.b;
 
 		// TODO: compute refraction ray if material supports it.
 		if(1)

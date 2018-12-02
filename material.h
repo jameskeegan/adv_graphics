@@ -13,6 +13,9 @@
 #include "colour.h"
 
 class Material {
+
+	Colour reflection;
+
 public:
 	virtual void compute_base_colour(Colour &result)
 	{
@@ -25,5 +28,15 @@ public:
 		result.r = 0.0f;
 		result.g = 0.0f;
 		result.b = 0.0f;
+	}
+
+	float get_reflection(){
+		return reflection.r;
+	}
+
+	void set_reflection(float ref){
+		reflection.r = ref;
+		reflection.g = ref;
+		reflection.b = ref;
 	}
 };
