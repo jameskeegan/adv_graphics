@@ -19,10 +19,11 @@
 
 #include <iostream>
 #include <fstream>
+#include <ctime>
 using namespace std;
 
-#define XSIZE 1024
-#define YSIZE 1024
+#define XSIZE 512
+#define YSIZE 512
 
 Colour framebuffer[YSIZE][XSIZE];
 
@@ -65,6 +66,10 @@ void write_framebuffer()
 
 int main(int argc, char *argv[])
 {
+
+    clock_t start = clock();
+    double time;
+
 	Scene scene;
 	int x, y;
 
@@ -129,6 +134,12 @@ int main(int argc, char *argv[])
 	sphere->next = sphere2;
 	scene.object_list = sphere;
 
+	// number of reflection levels to go down
+	int levels = 4;
+
+	// turns anti-aliasing on or off
+	bool aa = false;
+
 	for(y = 0; y < YSIZE; y += 1)
 	{
 		//cerr << "Line " << y+1 << " of " << (int)YSIZE << endl;
@@ -136,26 +147,35 @@ int main(int argc, char *argv[])
 
 		for (x = 0; x < XSIZE; x += 1)
 		{
-			float px = (((float)x / (float)XSIZE) - 0.5f); // -0.5 to 0.5
 
-			Ray root(Vertex(0.0f, 0.0f, 0.0f),Vector(0.0f, 0.0f, 0.0f));
+		    if(aa){
+                //TODO raytracing
+		    }else{
+                float px = (((float)x / (float)XSIZE) - 0.5f); // -0.5 to 0.5
 
-			root.position.x = 0.0f;
-			root.position.y = 0.0f;
-			root.position.z = 0.0f;
-			root.position.w = 1.0f;
+                Ray root(Vertex(0.0f, 0.0f, 0.0f),Vector(0.0f, 0.0f, 0.0f));
 
-			root.direction.x = px;
-			root.direction.y = py;
-			root.direction.z = 0.5f;
+                root.position.x = 0.0f;
+                root.position.y = 0.0f;
+                root.position.z = 0.0f;
+                root.position.w = 1.0f;
 
-			root.direction.normalise();
+                root.direction.x = px;
+                root.direction.y = py;
+                root.direction.z = 0.5f;
 
-			scene.raytrace(root, 4, scene.object_list, scene.light_list, framebuffer[y][x]);
+                root.direction.normalise();
+
+                scene.raytrace(root, levels, scene.object_list, scene.light_list, framebuffer[y][x]);
+		    }
+
+
 		}
    }
 
-   cerr << "Done" << endl;
+	time = (clock()-start)/ (double) CLOCKS_PER_SEC;
+
+	cerr << "Done in " << time << "seconds" << endl;
 
 	write_framebuffer();
 }

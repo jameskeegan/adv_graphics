@@ -104,28 +104,20 @@ void Scene::raytrace(Ray ray, int level, Object *objects, Light *lights, Colour 
 			light = light->next;
 		}
 
-		// TODO: compute reflection ray if material supports it.
-		Ray reflection;
-		Colour reflection_colour = Colour();
+		// gets reflection factor of the material
+		float ref_co = best_hit.what->material->get_reflection();
 
-		// create reflection ray direction
-		float incident = ray.direction.dot(best_hit.normal);
-		reflection.direction.x = ray.direction.x - 2.0f * incident * best_hit.normal.x;
-		reflection.direction.y = ray.direction.y - 2.0f * incident * best_hit.normal.y;
-		reflection.direction.z = ray.direction.z - 2.0f * incident * best_hit.normal.z;
+		// if true this means item material can reflect
+		if(ref_co > 0){
 
-		// create reflection ray's position
-		reflection.position.x = best_hit.position.x + 0.001f * reflection.direction.x;
-		reflection.position.y = best_hit.position.y + 0.001f * reflection.direction.y;
-		reflection.position.z = best_hit.position.z + 0.001f * reflection.direction.z;
+			// get colour of reflections
+			Colour reflection_colour = reflective_rays(ray, best_hit, level, objects, lights);
 
-		// recursive call, going down as many layers as said to reflect
-		raytrace(reflection, level, objects, lights, reflection_colour);
-
-		// add reflection colour onto main colour
-		colour.r += best_hit.what->material->get_reflection() * reflection_colour.r;
-		colour.g += best_hit.what->material->get_reflection() * reflection_colour.g;
-		colour.b += best_hit.what->material->get_reflection() * reflection_colour.b;
+            // add reflection colour onto main colour
+            colour.r += ref_co * reflection_colour.r;
+            colour.g += ref_co * reflection_colour.g;
+            colour.b += ref_co * reflection_colour.b;
+		}
 
 		// TODO: compute refraction ray if material supports it.
 		if(1)
@@ -139,4 +131,35 @@ void Scene::raytrace(Ray ray, int level, Object *objects, Light *lights, Colour 
 		colour.g = 0.0f;
 		colour.b = 0.0f;
 	}
+}
+
+/**
+ * Does raytracing for the reflected rays from a reflective surface
+ * @param ray : original ray
+ * @param best_hit : intersection point of ray
+ * @param level : levels of recursion to do
+ * @param objects : list of objects in scene
+ * @param lights : list of lights in scene
+ * @return colour of accumulation of reflection rays
+ */
+Colour Scene::reflective_rays(Ray ray, Hit best_hit, int level, Object *objects, Light *lights) {
+	Ray reflection;
+    Colour reflection_colour = Colour();
+
+	// create reflection ray direction
+	// R = E - 2*incident*N, where incident = N.E
+	float incident = ray.direction.dot(best_hit.normal);
+	reflection.direction.x = ray.direction.x - 2.0f * incident * best_hit.normal.x;
+	reflection.direction.y = ray.direction.y - 2.0f * incident * best_hit.normal.y;
+	reflection.direction.z = ray.direction.z - 2.0f * incident * best_hit.normal.z;
+
+	// create reflection ray's position
+	reflection.position.x = best_hit.position.x + 0.001f * reflection.direction.x;
+	reflection.position.y = best_hit.position.y + 0.001f * reflection.direction.y;
+	reflection.position.z = best_hit.position.z + 0.001f * reflection.direction.z;
+
+	// recursive call, going down as many layers as said to reflect
+	raytrace(reflection, level, objects, lights, reflection_colour);
+
+    return reflection_colour;
 }

@@ -32,4 +32,5 @@ public:
 	// is the one that should recurse down the reflection/refraction tree.
 	void raytrace(Ray ray, int level, Object *objects, Light *lights, Colour &colour);
 
+    Colour reflective_rays(Ray ray, Hit best_hit, int level, Object *objects, Light *lights);
 };
