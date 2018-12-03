@@ -12,14 +12,6 @@ math.h
 
 C:/Users/kegof/Documents/GitHub/adv_graphics/colour.h
 
-C:/Users/kegof/Documents/GitHub/adv_graphics/directional_light.cpp
-directional_light.h
-C:/Users/kegof/Documents/GitHub/adv_graphics/directional_light.h
-scene.h
-C:/Users/kegof/Documents/GitHub/adv_graphics/scene.h
-scene.h
-C:/Users/kegof/Documents/GitHub/adv_graphics/scene.h
-
 C:/Users/kegof/Documents/GitHub/adv_graphics/directional_light.h
 light.h
 C:/Users/kegof/Documents/GitHub/adv_graphics/light.h
@@ -97,10 +89,6 @@ vertex.h
 C:/Users/kegof/Documents/GitHub/adv_graphics/vertex.h
 vector.h
 C:/Users/kegof/Documents/GitHub/adv_graphics/vector.h
-
-C:/Users/kegof/Documents/GitHub/adv_graphics/scene.cpp
-scene.h
-C:/Users/kegof/Documents/GitHub/adv_graphics/scene.h
 
 C:/Users/kegof/Documents/GitHub/adv_graphics/scene.h
 colour.h

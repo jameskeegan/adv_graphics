@@ -17,8 +17,8 @@ class Sphere : public Object {
 public:
 
 	Vertex center;
-	float  radius;
+	double  radius;
 
-	Sphere(Vertex c, float r);
+	Sphere(Vertex c, double r);
 	void intersection(Ray ray, Hit &hit);
 };

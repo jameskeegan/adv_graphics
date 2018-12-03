@@ -30,11 +30,11 @@ public:
 		result.b = 0.0f;
 	}
 
-	float get_reflection(){
+	double get_reflection(){
 		return reflection.r;
 	}
 
-	void set_reflection(float ref){
+	void set_reflection(double ref){
 		reflection.r = ref;
 		reflection.g = ref;
 		reflection.b = ref;

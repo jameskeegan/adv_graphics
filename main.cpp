@@ -109,7 +109,7 @@ int main(int argc, char *argv[])
 
 	DirectionalLight *dl;
 	
-	dl = new DirectionalLight(Vector(0.0f, 0.0f, 1.0f),Colour(0.5f, 0.5f, 0.5f, 0.0f));
+	dl = new DirectionalLight(Vector(0.0f, 0.0f, 1.0f),Colour(0.5, 0.5, 0.5, 0.0));
 
 	dl->scene = &scene;
 
@@ -124,41 +124,69 @@ int main(int argc, char *argv[])
 
 	//PolyMesh *bunny = new PolyMesh((char *) mesh_name, transform);
 
-	Sphere *sphere = new Sphere(Vertex(0,-1,3), 1);
-	Sphere *sphere2 = new Sphere(Vertex(0,1,3), 1);
+	//Sphere *sphere = new Sphere(Vertex(0,-1,3), 1);
+	Sphere *sphere2 = new Sphere(Vertex(0,0,1.5), 1);
 
-	sphere->material = &bp;
+	//sphere->material = &bp;
 	sphere2->material = &sp2;
 	//bunny->material = &bp;
 	//scene.object_list = bunny;
-	sphere->next = sphere2;
-	scene.object_list = sphere;
+	//sphere->next = sphere2;
+	scene.object_list = sphere2;
 
 	// number of reflection levels to go down
-	int levels = 4;
+	int levels = 1;
 
 	// turns anti-aliasing on or off
-	bool aa = false;
+	bool aa = true;
+
+	// rate of AA - should be between 2 and 10 depending on AA level desired
+	int aa_rate = 3;
+
+	Ray root(Vertex(0.0f, 0.0f, 0.0f),Vector(0.0f, 0.0f, 0.0f));
+
+	root.position.x = 0.0;
+	root.position.y = 0.0;
+	root.position.z = 0.0;
+	root.position.w = 1.0;
 
 	for(y = 0; y < YSIZE; y += 1)
 	{
 		//cerr << "Line " << y+1 << " of " << (int)YSIZE << endl;
-		float py = (((float)y / (float)YSIZE) - 0.5f)*-1.0f; // 0.5 to -0.5, flipped y axis
+		double py = (((double)y / (double)YSIZE) - 0.5f)*-1.0f; // 0.5 to -0.5, flipped y axis
+		cout << py << endl;
 
 		for (x = 0; x < XSIZE; x += 1)
 		{
 
 		    if(aa){
-                //TODO raytracing
+
+                Colour aa_accumulator;
+
+                for(int i = 0; i < aa_rate; i += 1){
+                	for(int j=0; j < aa_rate; j += 1){
+						double px = (((double)x / (double)XSIZE) - 0.5f); // -0.5 to 0.5
+						root.direction.x = px + ((double)i/aa_rate)/(double)XSIZE;
+						root.direction.y = py + ((double)j/aa_rate)/(double)YSIZE;
+						root.direction.z = 0.5;
+
+						root.direction.normalise();
+
+						Colour return_col;
+						scene.raytrace(root, levels, scene.object_list, scene.light_list, return_col);
+
+						aa_accumulator.r += return_col.r;
+						aa_accumulator.g += return_col.g;
+						aa_accumulator.b += return_col.b;
+                	}
+                }
+
+                framebuffer[y][x].r = aa_accumulator.r/(aa_rate*aa_rate);
+                framebuffer[y][x].g = aa_accumulator.g/(aa_rate*aa_rate);
+                framebuffer[y][x].b = aa_accumulator.b/(aa_rate*aa_rate);
+
 		    }else{
-                float px = (((float)x / (float)XSIZE) - 0.5f); // -0.5 to 0.5
-
-                Ray root(Vertex(0.0f, 0.0f, 0.0f),Vector(0.0f, 0.0f, 0.0f));
-
-                root.position.x = 0.0f;
-                root.position.y = 0.0f;
-                root.position.z = 0.0f;
-                root.position.w = 1.0f;
+                double px = (((double)x / (double)XSIZE) - 0.5f); // -0.5 to 0.5
 
                 root.direction.x = px;
                 root.direction.y = py;

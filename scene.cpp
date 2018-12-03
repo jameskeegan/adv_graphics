@@ -47,11 +47,6 @@ void Scene::trace(Ray ray, Object *objects, Hit &hit)
 
 void Scene::raytrace(Ray ray, int level, Object *objects, Light *lights, Colour &colour)
 {
-	
-	// a default colour if we hit nothing.
-	float red   = 0.2f;
-	float green = 0.2f;
-	float blue  = 0.2f;
 
 	// check we've not recursed too far.
 	level = level - 1;
@@ -105,7 +100,7 @@ void Scene::raytrace(Ray ray, int level, Object *objects, Light *lights, Colour 
 		}
 
 		// gets reflection factor of the material
-		float ref_co = best_hit.what->material->get_reflection();
+		double ref_co = best_hit.what->material->get_reflection();
 
 		// if true this means item material can reflect
 		if(ref_co > 0){
@@ -148,7 +143,7 @@ Colour Scene::reflective_rays(Ray ray, Hit best_hit, int level, Object *objects,
 
 	// create reflection ray direction
 	// R = E - 2*incident*N, where incident = N.E
-	float incident = ray.direction.dot(best_hit.normal);
+	double incident = ray.direction.dot(best_hit.normal);
 	reflection.direction.x = ray.direction.x - 2.0f * incident * best_hit.normal.x;
 	reflection.direction.y = ray.direction.y - 2.0f * incident * best_hit.normal.y;
 	reflection.direction.z = ray.direction.z - 2.0f * incident * best_hit.normal.z;

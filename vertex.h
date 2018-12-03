@@ -11,20 +11,20 @@
 
 class Vertex {
 public:
-	float x;
-	float y;
-	float z;
-	float w;
+	double x;
+	double y;
+	double z;
+	double w;
 
 	Vertex()
 	{
 		x = 0.0;
 		y = 0.0;
 		z = 0.0;
-		w = 1.0f;
+		w = 1.0;
 	}
 
-	Vertex(float px, float py, float pz, float pw)
+	Vertex(double px, double py, double pz, double pw)
 	{
 		x = px;
 		y = py;
@@ -32,11 +32,11 @@ public:
 		w = pw;
 	}
 
-	Vertex(float px, float py, float pz)
+	Vertex(double px, double py, double pz)
 	{
 		x = px;
 		y = py;
 		z = pz;
-		w = 1.0f;
+		w = 1.0;
 	}
 };

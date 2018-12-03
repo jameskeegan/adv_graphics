@@ -11,20 +11,20 @@
 
 class Colour {
 public:
-	float r;
-	float g;
-	float b;
-	float a;
+	double r;
+    double g;
+    double b;
+    double a;
 
 	Colour()
 	{
-		r = 0.0f;
-		g = 0.0f;
-		b = 0.0f;
-		a = 1.0f;
+		r = 0.0;
+		g = 0.0;
+		b = 0.0;
+		a = 1.0;
 	}
 
-	Colour(float pr, float pg, float pb, float pa)
+	Colour(double pr, double pg, double pb, double pa)
 	{
 		r = pr;
 		g = pg;
