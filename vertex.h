@@ -11,10 +11,10 @@
 
 class Vertex {
 public:
-	double x;
-	double y;
-	double z;
-	double w;
+	long double x;
+	long double y;
+	long double z;
+	long double w;
 
 	Vertex()
 	{
@@ -24,7 +24,7 @@ public:
 		w = 1.0;
 	}
 
-	Vertex(double px, double py, double pz, double pw)
+	Vertex(long double px, long double py, long double pz, long double pw)
 	{
 		x = px;
 		y = py;
@@ -32,7 +32,7 @@ public:
 		w = pw;
 	}
 
-	Vertex(double px, double py, double pz)
+	Vertex(long double px, long double py, long double pz)
 	{
 		x = px;
 		y = py;

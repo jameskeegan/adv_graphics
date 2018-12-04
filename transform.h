@@ -81,7 +81,7 @@ public:
   
   void apply(Vertex &in)
   {
-    double x,y,z,w;
+    long double x,y,z,w;
     
     x = matrix[0][0] * in.x
       + matrix[0][1] * in.y

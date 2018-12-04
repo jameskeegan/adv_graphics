@@ -11,10 +11,10 @@
 
 class Colour {
 public:
-	double r;
-    double g;
-    double b;
-    double a;
+	long double r;
+    long double g;
+    long double b;
+    long double a;
 
 	Colour()
 	{
@@ -24,7 +24,7 @@ public:
 		a = 1.0;
 	}
 
-	Colour(double pr, double pg, double pb, double pa)
+	Colour(long double pr, long double pg, long double pb, long double pa)
 	{
 		r = pr;
 		g = pg;

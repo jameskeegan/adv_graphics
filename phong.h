@@ -19,7 +19,7 @@ public:
     Colour ambient;
 	Colour diffuse;
 	Colour specular;
-	double  power;
+	long double  power;
 
 	void compute_base_colour(Colour &result);
 

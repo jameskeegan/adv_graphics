@@ -9,7 +9,7 @@
 #include <math.h>
 
 
-Sphere::Sphere(Vertex c, double r)
+Sphere::Sphere(Vertex c, long double r)
 {
 	center = c;
 	radius = r;
@@ -29,22 +29,22 @@ void Sphere::intersection(Ray ray, Hit &hit)
 	ro.y = ray.position.y - center.y;
 	ro.z = ray.position.z - center.z;
 
-	double a = (double)ray.direction.dot(ray.direction);
-	double b = (double)(2.0 * ray.direction.dot(ro));
-	double c = (double)ro.dot(ro) - radius*radius;
+	long double a = (long double)ray.direction.dot(ray.direction);
+	long double b = (long double)(2.0 * ray.direction.dot(ro));
+	long double c = (long double)ro.dot(ro) - radius*radius;
 
-	double disc = b*b - 4 * a*c;
+	long double disc = b*b - 4 * a*c;
 
 	if (disc < 0.0)
 	{
 		return; // a negative value indicates no intersection.
 	}
 
-	double ds = sqrtf(disc);
+	long double ds = sqrtf(disc);
 	
 
-	double t0 = (-b - ds) / 2.0;
-	double t1 = (-b + ds) / 2.0;
+	long double t0 = (-b - ds) / 2.0;
+	long double t1 = (-b + ds) / 2.0;
 
 	if (t1 < 0.0)
 	{

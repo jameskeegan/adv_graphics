@@ -51,6 +51,8 @@ fstream
 -
 ctime
 -
+thread
+-
 
 C:/Users/kegof/Documents/GitHub/adv_graphics/material.h
 vector.h

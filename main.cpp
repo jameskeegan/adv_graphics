@@ -20,6 +20,7 @@
 #include <iostream>
 #include <fstream>
 #include <ctime>
+#include <thread>
 using namespace std;
 
 #define XSIZE 512
@@ -55,9 +56,11 @@ void write_framebuffer()
 	{
 		for (x = 0; x < XSIZE; x += 1)
 		{
-			fout << (unsigned char)(255.0*framebuffer[y][x].r);
-			fout << (unsigned char)(255.0*framebuffer[y][x].g);
-			fout << (unsigned char)(255.0*framebuffer[y][x].b);
+			long double red = 255.0*framebuffer[y][x].r;
+			long double green = 255.0*framebuffer[y][x].g;
+			long double blue = 255.0*framebuffer[y][x].b;
+
+			fout << (unsigned char)(red) << (unsigned char)(green) << (unsigned char)(blue);
 		}
 	}
 
@@ -68,7 +71,7 @@ int main(int argc, char *argv[])
 {
 
     clock_t start = clock();
-    double time;
+    long double time;
 
 	Scene scene;
 	int x, y;
@@ -108,7 +111,7 @@ int main(int argc, char *argv[])
 	sp2.set_reflection(0.5f);
 
 	DirectionalLight *dl;
-	
+
 	dl = new DirectionalLight(Vector(0.0f, 0.0f, 1.0f),Colour(0.5, 0.5, 0.5, 0.0));
 
 	dl->scene = &scene;
@@ -135,13 +138,13 @@ int main(int argc, char *argv[])
 	scene.object_list = sphere2;
 
 	// number of reflection levels to go down
-	int levels = 1;
+	int levels = 4;
 
 	// turns anti-aliasing on or off
 	bool aa = true;
 
 	// rate of AA - should be between 2 and 10 depending on AA level desired
-	int aa_rate = 3;
+	int aa_rate = 4;
 
 	Ray root(Vertex(0.0f, 0.0f, 0.0f),Vector(0.0f, 0.0f, 0.0f));
 
@@ -153,8 +156,7 @@ int main(int argc, char *argv[])
 	for(y = 0; y < YSIZE; y += 1)
 	{
 		//cerr << "Line " << y+1 << " of " << (int)YSIZE << endl;
-		double py = (((double)y / (double)YSIZE) - 0.5f)*-1.0f; // 0.5 to -0.5, flipped y axis
-		cout << py << endl;
+		long double py = (((long double)y / (long double)YSIZE) - 0.5)*-1.0; // 0.5 to -0.5, flipped y axis
 
 		for (x = 0; x < XSIZE; x += 1)
 		{
@@ -165,9 +167,9 @@ int main(int argc, char *argv[])
 
                 for(int i = 0; i < aa_rate; i += 1){
                 	for(int j=0; j < aa_rate; j += 1){
-						double px = (((double)x / (double)XSIZE) - 0.5f); // -0.5 to 0.5
-						root.direction.x = px + ((double)i/aa_rate)/(double)XSIZE;
-						root.direction.y = py + ((double)j/aa_rate)/(double)YSIZE;
+						long double px = (((long double)x / (long double)XSIZE) - 0.5); // -0.5 to 0.5
+						root.direction.x = px + ((long double)i/aa_rate)/(long double)XSIZE;
+						root.direction.y = py + ((long double)j/aa_rate)/(long double)YSIZE;
 						root.direction.z = 0.5;
 
 						root.direction.normalise();
@@ -183,27 +185,49 @@ int main(int argc, char *argv[])
 
                 framebuffer[y][x].r = aa_accumulator.r/(aa_rate*aa_rate);
                 framebuffer[y][x].g = aa_accumulator.g/(aa_rate*aa_rate);
-                framebuffer[y][x].b = aa_accumulator.b/(aa_rate*aa_rate);
+                framebuffer[y][x].b = 0.0;
 
-		    }else{
-                double px = (((double)x / (double)XSIZE) - 0.5f); // -0.5 to 0.5
+                // why won't you just work
+				if(framebuffer[y][x].r > 1){
+					framebuffer[y][x].r = 1;
+				}else if (framebuffer[y][x].r < 0){
+					framebuffer[y][x].r = 0;
+				}
 
-                root.direction.x = px;
-                root.direction.y = py;
-                root.direction.z = 0.5f;
+				if(framebuffer[y][x].g > 1){
+					framebuffer[y][x].g = 1;
+				}else if (framebuffer[y][x].g < 0){
+					framebuffer[y][x].g = 0;
+				}
 
-                root.direction.normalise();
+				if(framebuffer[y][x].b > 1){
+					framebuffer[y][x].b = 1;
+				}else if (framebuffer[y][x].b < 0){
+					framebuffer[y][x].b = 0;
+				}
 
-                scene.raytrace(root, levels, scene.object_list, scene.light_list, framebuffer[y][x]);
-		    }
 
+
+			}else {
+				long double px = (((long double) x / (long double) XSIZE) - 0.5f); // -0.5 to 0.5
+
+				root.direction.x = px;
+				root.direction.y = py;
+				root.direction.z = 0.5f;
+
+				root.direction.normalise();
+
+				scene.raytrace(root, levels, scene.object_list, scene.light_list, framebuffer[y][x]);
+			}
 
 		}
+
    }
 
-	time = (clock()-start)/ (double) CLOCKS_PER_SEC;
+	time = (clock()-start)/ (long double) CLOCKS_PER_SEC;
 
 	cerr << "Done in " << time << "seconds" << endl;
 
 	write_framebuffer();
+
 }

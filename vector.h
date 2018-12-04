@@ -13,11 +13,11 @@
 
 class Vector {
 public:
-	double x;
-	double y;
-	double z;
+	long double x;
+	long double y;
+	long double z;
 
-	Vector(double px, double py, double pz)
+	Vector(long double px, long double py, long double pz)
 	{
 		x = px;
 		y = py;
@@ -33,13 +33,13 @@ public:
 
 	void normalise()
 	{
-		double len = (double)sqrt((double)(x*x + y*y + z*z));
+		long double len = (long double)sqrt((long double)(x*x + y*y + z*z));
 		x = x / len;
 		y = y / len;
 		z = z / len;
 	}
 
-	double dot(Vector &other)
+	long double dot(Vector &other)
 	{
 		return x*other.x + y*other.y + z*other.z;
 	}
@@ -47,7 +47,7 @@ public:
 
 	void reflection(Vector initial, Vector &reflect)
 	{
-		double d;
+		long double d;
 
 		d = dot(initial);
 		d = d * 2.0f;

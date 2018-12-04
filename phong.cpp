@@ -21,7 +21,7 @@ void Phong::compute_base_colour(Colour &result)
 void Phong::compute_light_colour(Vector &viewer, Vector &normal, Vector &ldir, Colour &result)
 {
 
-	double diff;
+	long double diff;
 
 	Vector tolight;
 	Vector toviewer;
@@ -52,13 +52,13 @@ void Phong::compute_light_colour(Vector &viewer, Vector &normal, Vector &ldir, C
 	normal.reflection(tolight, r);
 	r.normalise();
 
-	double h;
+	long double h;
 
 	h = r.dot(toviewer);
 
 	if (h > 0.0f)
 	{
-		double p = (double)pow(h, power);
+		long double p = (long double)pow(h, power);
 
 		result.r += specular.r * p;
 		result.g += specular.g * p;
