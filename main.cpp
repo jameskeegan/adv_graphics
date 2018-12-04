@@ -60,7 +60,52 @@ void write_framebuffer()
 			long double green = 255.0*framebuffer[y][x].g;
 			long double blue = 255.0*framebuffer[y][x].b;
 
-			fout << (unsigned char)(red) << (unsigned char)(green) << (unsigned char)(blue);
+			unsigned char un_char = (unsigned char) green;
+
+			if(green > 6.0){
+			    if(green < 12.0){
+			        cout << " " << green << endl;
+
+			        green = 0.0;
+
+			    }
+			}
+
+            if(red > 6.0){
+                if(red < 12.0){
+                    red = 0.0;
+
+                }
+            }
+
+            if(blue > 6.0){
+                if(blue < 12.0){
+                    blue = 0.0;
+
+                }
+            }
+
+
+
+            /*
+            if (6.9 > green > 11.0){
+                //cout << un_char << "   " << green << endl;
+                green = 12.0;
+                cout << "opened" << endl;
+                fout << (unsigned char)(0.0) << (unsigned char)(50.0) << (unsigned char)(0.0);
+            }else{
+
+                fout << (unsigned char)(0.0) << (unsigned char)(green) << (unsigned char)(0.0);
+            }
+
+            */
+
+            if(6.9 < green < 11.0){
+                //cout << un_char << "   " << green << endl;
+            }
+
+            fout << (unsigned char)(red) << (unsigned char)(green) << (unsigned char)(blue);
+
 		}
 	}
 
@@ -93,7 +138,7 @@ int main(int argc, char *argv[])
 	bp.specular.b = 0.0f;
 	bp.power = 40.0f;
 
-	bp.set_reflection(0.5f);
+	bp.set_reflection(0.5);
 
 	Phong sp2;
 
@@ -108,7 +153,7 @@ int main(int argc, char *argv[])
 	sp2.specular.b = 0.0f;
 	sp2.power = 40.0f;
 
-	sp2.set_reflection(0.5f);
+	sp2.set_reflection(0.5);
 
 	DirectionalLight *dl;
 
@@ -127,15 +172,15 @@ int main(int argc, char *argv[])
 
 	//PolyMesh *bunny = new PolyMesh((char *) mesh_name, transform);
 
-	//Sphere *sphere = new Sphere(Vertex(0,-1,3), 1);
-	Sphere *sphere2 = new Sphere(Vertex(0,0,1.5), 1);
+	Sphere *sphere = new Sphere(Vertex(0,-1,3), 1);
+	Sphere *sphere2 = new Sphere(Vertex(0,1,3), 1);
 
-	//sphere->material = &bp;
+	sphere->material = &bp;
 	sphere2->material = &sp2;
 	//bunny->material = &bp;
 	//scene.object_list = bunny;
-	//sphere->next = sphere2;
-	scene.object_list = sphere2;
+	sphere->next = sphere2;
+	scene.object_list = sphere;
 
 	// number of reflection levels to go down
 	int levels = 4;
@@ -186,6 +231,8 @@ int main(int argc, char *argv[])
                 framebuffer[y][x].r = aa_accumulator.r/(aa_rate*aa_rate);
                 framebuffer[y][x].g = aa_accumulator.g/(aa_rate*aa_rate);
                 framebuffer[y][x].b = 0.0;
+
+
 
                 // why won't you just work
 				if(framebuffer[y][x].r > 1){

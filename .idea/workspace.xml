@@ -13,28 +13,10 @@
   <component name="ChangeListManager">
     <list default="true" id="052dabad-e9f2-4955-bb84-e300ff8593ab" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Coursework_CPP.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Coursework_CPP.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Coursework_CPP.dir/directional_light.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Coursework_CPP.dir/directional_light.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Coursework_CPP.dir/main.cpp.obj" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Coursework_CPP.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Coursework_CPP.dir/objects.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Coursework_CPP.dir/phong.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Coursework_CPP.dir/phong.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Coursework_CPP.dir/polymesh.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Coursework_CPP.dir/polymesh.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Coursework_CPP.dir/scene.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Coursework_CPP.dir/scene.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Coursework_CPP.dir/sphere.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Coursework_CPP.dir/sphere.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Coursework_CPP.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Coursework_CPP.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/image_1024.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/image_1024.ppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/colour.h" beforeDir="false" afterPath="$PROJECT_DIR$/colour.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hit.h" beforeDir="false" afterPath="$PROJECT_DIR$/hit.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/material.h" beforeDir="false" afterPath="$PROJECT_DIR$/material.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phong.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/phong.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phong.h" beforeDir="false" afterPath="$PROJECT_DIR$/phong.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scene.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/scene.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sphere.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/sphere.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sphere.h" beforeDir="false" afterPath="$PROJECT_DIR$/sphere.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/transform.h" beforeDir="false" afterPath="$PROJECT_DIR$/transform.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vector.h" beforeDir="false" afterPath="$PROJECT_DIR$/vector.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vertex.h" beforeDir="false" afterPath="$PROJECT_DIR$/vertex.h" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -101,29 +83,29 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cpp" value="5260" />
+          <entry key="cpp" value="6287" />
           <entry key="h" value="331" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Doxygen file" value="1" />
-          <entry key="ObjectiveC" value="5590" />
+          <entry key="Doxygen file" value="4" />
+          <entry key="ObjectiveC" value="6614" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="Coursework_CPP (disassembly)" value="2" />
           <entry key="cpp" value="9" />
-          <entry key="h" value="22" />
-          <entry key="ppm" value="9" />
+          <entry key="h" value="23" />
+          <entry key="ppm" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Disassembly" value="2" />
-          <entry key="Image" value="9" />
-          <entry key="ObjectiveC" value="31" />
+          <entry key="Image" value="10" />
+          <entry key="ObjectiveC" value="32" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -141,20 +123,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="146" column="19" selection-start-line="146" selection-start-column="19" selection-end-line="146" selection-end-column="19" />
+            <state relative-caret-position="415">
+              <caret line="155" column="26" selection-start-line="155" selection-start-column="26" selection-end-line="155" selection-end-column="26" />
               <folding>
                 <element signature="e#412#430#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/colour.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="14" lean-forward="true" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -188,6 +161,14 @@
       <find>colour</find>
       <find>float</find>
       <find>double</find>
+      <find>12.</find>
+      <find>6.</find>
+      <find>8.</find>
+      <find>6.</find>
+      <find>11.</find>
+      <find>7.</find>
+      <find>7.</find>
+      <find>cout</find>
     </findStrings>
     <replaceStrings>
       <replace>long double</replace>
@@ -267,6 +248,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\kegof\Documents\GitHub\adv_graphics" />
       <recent name="C:\Users\kegof\Documents\GitHub\adv_graphics\cmake-build-debug" />
       <recent name="C:\Users\kegof\Documents\University of Bath\2018-19\Work\CM30075\Coursework_CPP\bunny" />
     </key>
@@ -319,12 +301,12 @@
       <workItem from="1543781423938" duration="4106000" />
       <workItem from="1543846974039" duration="1697000" />
       <workItem from="1543868462580" duration="17478000" />
-      <workItem from="1543923761901" duration="3964000" />
+      <workItem from="1543923761901" duration="10899000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40256000" />
+    <option name="totallyTimeSpent" value="47191000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1613" height="873" extended-state="6" />
@@ -336,13 +318,13 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2884097" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.28163266" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.28032345" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="8" weight="0.31940702" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32789117" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32749325" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="CMake" order="12" weight="0.32884097" />
@@ -540,18 +522,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/CImg.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-17799" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/image_1024_pre_aa.ppm">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="146" column="19" selection-start-line="146" selection-start-column="19" selection-end-line="146" selection-end-column="19" />
+        <state relative-caret-position="415">
+          <caret line="155" column="26" selection-start-line="155" selection-start-column="26" selection-end-line="155" selection-end-column="26" />
           <folding>
             <element signature="e#412#430#0" expanded="true" />
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/image_1024_pre_aa.ppm">
-      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/image_1024.ppm">
       <provider selected="true" editor-type-id="images" />
