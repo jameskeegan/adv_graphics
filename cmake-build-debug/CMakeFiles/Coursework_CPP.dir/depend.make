@@ -23,6 +23,7 @@ CMakeFiles/Coursework_CPP.dir/main.cpp.obj: ../main.cpp
 CMakeFiles/Coursework_CPP.dir/main.cpp.obj: ../material.h
 CMakeFiles/Coursework_CPP.dir/main.cpp.obj: ../object.h
 CMakeFiles/Coursework_CPP.dir/main.cpp.obj: ../phong.h
+CMakeFiles/Coursework_CPP.dir/main.cpp.obj: ../physical_light.h
 CMakeFiles/Coursework_CPP.dir/main.cpp.obj: ../polymesh.h
 CMakeFiles/Coursework_CPP.dir/main.cpp.obj: ../ray.h
 CMakeFiles/Coursework_CPP.dir/main.cpp.obj: ../scene.h
@@ -37,6 +38,19 @@ CMakeFiles/Coursework_CPP.dir/phong.cpp.obj: ../phong.cpp
 CMakeFiles/Coursework_CPP.dir/phong.cpp.obj: ../phong.h
 CMakeFiles/Coursework_CPP.dir/phong.cpp.obj: ../vector.h
 
+CMakeFiles/Coursework_CPP.dir/physical_light.cpp.obj: ../Vector.h
+CMakeFiles/Coursework_CPP.dir/physical_light.cpp.obj: ../colour.h
+CMakeFiles/Coursework_CPP.dir/physical_light.cpp.obj: ../hit.h
+CMakeFiles/Coursework_CPP.dir/physical_light.cpp.obj: ../light.h
+CMakeFiles/Coursework_CPP.dir/physical_light.cpp.obj: ../material.h
+CMakeFiles/Coursework_CPP.dir/physical_light.cpp.obj: ../object.h
+CMakeFiles/Coursework_CPP.dir/physical_light.cpp.obj: ../physical_light.cpp
+CMakeFiles/Coursework_CPP.dir/physical_light.cpp.obj: ../physical_light.h
+CMakeFiles/Coursework_CPP.dir/physical_light.cpp.obj: ../ray.h
+CMakeFiles/Coursework_CPP.dir/physical_light.cpp.obj: ../scene.h
+CMakeFiles/Coursework_CPP.dir/physical_light.cpp.obj: ../vector.h
+CMakeFiles/Coursework_CPP.dir/physical_light.cpp.obj: ../vertex.h
+
 CMakeFiles/Coursework_CPP.dir/polymesh.cpp.obj: ../Vector.h
 CMakeFiles/Coursework_CPP.dir/polymesh.cpp.obj: ../colour.h
 CMakeFiles/Coursework_CPP.dir/polymesh.cpp.obj: ../hit.h
@@ -45,6 +59,7 @@ CMakeFiles/Coursework_CPP.dir/polymesh.cpp.obj: ../object.h
 CMakeFiles/Coursework_CPP.dir/polymesh.cpp.obj: ../polymesh.cpp
 CMakeFiles/Coursework_CPP.dir/polymesh.cpp.obj: ../polymesh.h
 CMakeFiles/Coursework_CPP.dir/polymesh.cpp.obj: ../ray.h
+CMakeFiles/Coursework_CPP.dir/polymesh.cpp.obj: ../sphere.h
 CMakeFiles/Coursework_CPP.dir/polymesh.cpp.obj: ../transform.h
 CMakeFiles/Coursework_CPP.dir/polymesh.cpp.obj: ../vector.h
 CMakeFiles/Coursework_CPP.dir/polymesh.cpp.obj: ../vertex.h

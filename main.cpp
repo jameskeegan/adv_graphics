@@ -14,6 +14,7 @@
 #include "polymesh.h"
 #include "phong.h"
 #include "directional_light.h"
+#include "physical_light.h"
 #include "sphere.h"
 #include "vertex.h"
 
@@ -23,8 +24,8 @@
 #include <thread>
 using namespace std;
 
-#define XSIZE 512
-#define YSIZE 512
+#define XSIZE 64
+#define YSIZE 64
 
 Colour framebuffer[YSIZE][XSIZE];
 
@@ -136,7 +137,7 @@ int main(int argc, char *argv[])
 	bp.specular.b = 0.0f;
 	bp.power = 40.0f;
 
-	bp.set_reflection(0.5);
+	bp.set_reflection(0.0);
 
 	Phong sp2;
 
@@ -159,6 +160,10 @@ int main(int argc, char *argv[])
 
 	dl->scene = &scene;
 
+	// point light
+	PhysicalLight *pl = new PhysicalLight(Vector(0.0,0.0,0.0),Vector(0.0, 0.0, 1.0), Colour(0.5,0.5,0.5, 0.0));
+	pl->scene = &scene;
+
 	scene.light_list = dl;
 
 	Transform transform(10.0f,  0.0f,  0.0f, 0.0f,
@@ -168,23 +173,26 @@ int main(int argc, char *argv[])
 
 	const char* mesh_name = "..//bunny_zipper.kcply";
 
-	//PolyMesh *bunny = new PolyMesh((char *) mesh_name, transform);
+	PolyMesh *bunny = new PolyMesh((char *) mesh_name, transform);
 
 	Sphere *sphere = new Sphere(Vertex(0,-1,3), 1);
-	Sphere *sphere2 = new Sphere(Vertex(0,0,1.5), 1);
+	Sphere *sphere2 = new Sphere(Vertex(-0.168404, 0.101542, 2.01537), 0.778495*1.2);
 
 	//sphere->material = &bp;
 	sphere2->material = &sp2;
-	//bunny->material = &bp;
-	//scene.object_list = bunny;
 	//sphere->next = sphere2;
 	scene.object_list = sphere2;
+
+    //bunny->material = &bp;
+    //scene.object_list = bunny;
+
+	//bunny->get_largest_x();
 
 	// number of reflection levels to go down
 	int levels = 4;
 
 	// turns anti-aliasing on or off
-	bool aa = true;
+	bool aa = false;
 
 	// rate of AA - should be between 2 and 10 depending on AA level desired
 	int aa_rate = 4;

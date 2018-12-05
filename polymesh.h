@@ -13,6 +13,7 @@
 #include "vertex.h"
 #include "object.h"
 #include "transform.h"
+#include "sphere.h"
 
 typedef int TriangleIndex[3];
 
@@ -22,9 +23,13 @@ public:
 	int triangle_count;
         Vertex *vertex;
 	TriangleIndex *triangle;
+	bool bounding;
+	Sphere *bounding_sphere;
 
 	PolyMesh(char *file, Transform &transform);
 	void intersection(Ray ray, Hit &hit);
 	void triangle_intersection(Ray ray, Hit &hit, int which_triangle);
 	float test_edge(Vector &normal, Vertex &p, Vertex &v1, Vertex &v0);
+	long double* get_largest_x(long double &radius);
+	void set_bounding();
 };

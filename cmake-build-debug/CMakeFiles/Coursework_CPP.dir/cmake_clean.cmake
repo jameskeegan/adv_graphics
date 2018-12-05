@@ -5,6 +5,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Coursework_CPP.dir/polymesh.cpp.obj"
   "CMakeFiles/Coursework_CPP.dir/scene.cpp.obj"
   "CMakeFiles/Coursework_CPP.dir/sphere.cpp.obj"
+  "CMakeFiles/Coursework_CPP.dir/physical_light.cpp.obj"
   "Coursework_CPP.pdb"
   "Coursework_CPP.exe"
   "Coursework_CPP.exe.manifest"

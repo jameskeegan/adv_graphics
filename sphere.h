@@ -19,6 +19,7 @@ public:
 	Vertex center;
 	long double  radius;
 
+	Sphere();
 	Sphere(Vertex c, long double r);
 	void intersection(Ray ray, Hit &hit);
 };

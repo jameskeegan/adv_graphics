@@ -139,6 +139,8 @@ PolyMesh::PolyMesh(char *file, Transform &transform)
   
   meshfile.close();
   cerr << "Meshfile read." << endl;
+
+  set_bounding();
 }
 
 float PolyMesh::test_edge(Vector &normal, Vertex &p, Vertex &v1, Vertex &v0)
@@ -247,30 +249,148 @@ void PolyMesh::intersection(Ray ray, Hit &hit)
 
   hit.flag = false;
 
-  // Check each triangle any find closest if any intersecion
+  /*
+  if(bounding){
+    bounding_sphere.intersection(ray, hit);
 
-  for(i = 0; i < triangle_count; i += 1)
-  {
-    triangle_intersection(ray, current_hit, i);
-
-    if (current_hit.flag != false)
-    {
-      if (hit.flag == false)
+    if(hit.flag){
+      // Check each triangle any find closest if any intersecion
+      for(i = 0; i < triangle_count; i += 1)
       {
-	hit = current_hit;
+        triangle_intersection(ray, current_hit, i);
 
-      } else if (current_hit.t < hit.t)
+        if (current_hit.flag)
+        {
+          if (!hit.flag)
+          {
+            hit = current_hit;
+
+          } else if (current_hit.t < hit.t)
+          {
+            hit = current_hit;
+          }
+        }
+      }
+
+      if (hit.flag)
       {
-        hit = current_hit;
+        if(hit.normal.dot(ray.direction) > 0.0)
+        {
+          hit.normal.negate();
+        }
       }
     }
+
+
   }
 
-  if (hit.flag == true)
-  {
-    if(hit.normal.dot(ray.direction) > 0.0)
-    {
-      hit.normal.negate();
+  */
+
+
+}
+
+long double* PolyMesh::get_largest_x(long double &radius) {
+
+  long double largest_x = -10000000;
+  long double largest_y = -10000000;
+  long double largest_z = -10000000;
+
+  for(int i=0; i<vertex_count; i++){
+    if(vertex[i].x > largest_x){
+      largest_x = vertex[i].x;
     }
+    if(vertex[i].y > largest_y){
+      largest_y = vertex[i].y;
+    }
+    if(vertex[i].z > largest_z){
+      largest_z = vertex[i].z;
+    }
+
   }
+
+  cerr << largest_x << endl;
+  cerr << largest_y << endl;
+  cerr << largest_z << endl;
+
+  long double smallest_x = 10000000;
+  long double smallest_y = 10000000;
+  long double smallest_z = 10000000;
+
+  for(int i=0; i<vertex_count; i++){
+    if(vertex[i].x < smallest_x){
+      smallest_x = vertex[i].x;
+    }
+    if(vertex[i].y < smallest_y){
+      smallest_y = vertex[i].y;
+    }
+    if(vertex[i].z < smallest_z){
+      smallest_z = vertex[i].z;
+    }
+
+  }
+
+  cerr << smallest_x << endl;
+  cerr << smallest_y << endl;
+  cerr << smallest_z << endl;
+
+  cerr << "X = " << largest_x - smallest_x << endl;
+  cerr << "Y = " << largest_y - smallest_y << endl;
+  cerr << "Z = " << largest_z - smallest_z << endl;
+
+  long double differences[3] = {largest_x-smallest_x, largest_y-smallest_y, largest_z-smallest_z};
+  long double r;
+
+  long double centre_x = smallest_x + differences[0]/2;
+  long double centre_y = smallest_y + differences[1]/2;
+  long double centre_z = smallest_z + differences[2]/2;
+
+  if((differences[0]>differences[1]) && (differences[0]>differences[2])){
+    long double choice[2] = {smallest_x, largest_x};
+    r = differences[0]/2;
+  }else if((differences[1]>differences[0]) && (differences[1]>differences[2])){
+    long double choice[2] = {smallest_y, largest_y};
+    r = differences[1]/2;
+  }else{
+    long double choice[2] = {smallest_z, largest_z};
+    r = differences[2]/2;
+  }
+
+  cerr << "Largest difference = " << differences[0] << endl;
+
+  // make new sphere, radius = r, centre = midpoint of all of these
+
+  long double centre[3] = {centre_x, centre_y, centre_z};
+
+  bounding_sphere->center.x = centre_x;
+  bounding_sphere->center.y = centre_y;
+  bounding_sphere->center.z = centre_z;
+
+  cerr << "Centre [" << centre_x << ", " << centre_y << ", " << centre_z << "]" << endl;
+
+  cerr << "radius = " << r << endl;
+
+  radius = r;
+
+  // set radius, add a little extra to ensure bunny is hidden
+  bounding_sphere->radius = r*1.2;
+
+  cerr << "Centre [" << bounding_sphere->center.x << ", " << bounding_sphere->center.y << ", " << bounding_sphere->center.z << "]" << endl;
+
+
+  return centre;
+}
+
+void PolyMesh::set_bounding() {
+  long double radius;
+
+  long double* centre_ords = get_largest_x(radius);
+
+
+  bounding_sphere->center.x = centre_ords[0];
+  bounding_sphere->center.y = centre_ords[1];
+  bounding_sphere->center.z = centre_ords[2];
+  bounding_sphere->radius = radius;
+
+  bounding = true;
+
 }

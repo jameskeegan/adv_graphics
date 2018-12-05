@@ -9,6 +9,11 @@
 #include <math.h>
 
 
+Sphere::Sphere() {
+
+}
+
+
 Sphere::Sphere(Vertex c, long double r)
 {
 	center = c;

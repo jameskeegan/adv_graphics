@@ -203,6 +203,33 @@ phong.cpp.s:
 	$(MAKE) -f CMakeFiles\Coursework_CPP.dir\build.make CMakeFiles/Coursework_CPP.dir/phong.cpp.s
 .PHONY : phong.cpp.s
 
+physical_light.obj: physical_light.cpp.obj
+
+.PHONY : physical_light.obj
+
+# target to build an object file
+physical_light.cpp.obj:
+	$(MAKE) -f CMakeFiles\Coursework_CPP.dir\build.make CMakeFiles/Coursework_CPP.dir/physical_light.cpp.obj
+.PHONY : physical_light.cpp.obj
+
+physical_light.i: physical_light.cpp.i
+
+.PHONY : physical_light.i
+
+# target to preprocess a source file
+physical_light.cpp.i:
+	$(MAKE) -f CMakeFiles\Coursework_CPP.dir\build.make CMakeFiles/Coursework_CPP.dir/physical_light.cpp.i
+.PHONY : physical_light.cpp.i
+
+physical_light.s: physical_light.cpp.s
+
+.PHONY : physical_light.s
+
+# target to generate assembly for a file
+physical_light.cpp.s:
+	$(MAKE) -f CMakeFiles\Coursework_CPP.dir\build.make CMakeFiles/Coursework_CPP.dir/physical_light.cpp.s
+.PHONY : physical_light.cpp.s
+
 polymesh.obj: polymesh.cpp.obj
 
 .PHONY : polymesh.obj
@@ -302,6 +329,9 @@ help:
 	@echo ... phong.obj
 	@echo ... phong.i
 	@echo ... phong.s
+	@echo ... physical_light.obj
+	@echo ... physical_light.i
+	@echo ... physical_light.s
 	@echo ... polymesh.obj
 	@echo ... polymesh.i
 	@echo ... polymesh.s
