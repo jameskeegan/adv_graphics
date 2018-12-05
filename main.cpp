@@ -64,8 +64,6 @@ void write_framebuffer()
 
 			if(green > 6.0){
 			    if(green < 12.0){
-			        cout << " " << green << endl;
-
 			        green = 0.0;
 
 			    }
@@ -173,14 +171,14 @@ int main(int argc, char *argv[])
 	//PolyMesh *bunny = new PolyMesh((char *) mesh_name, transform);
 
 	Sphere *sphere = new Sphere(Vertex(0,-1,3), 1);
-	Sphere *sphere2 = new Sphere(Vertex(0,1,3), 1);
+	Sphere *sphere2 = new Sphere(Vertex(0,0,1.5), 1);
 
-	sphere->material = &bp;
+	//sphere->material = &bp;
 	sphere2->material = &sp2;
 	//bunny->material = &bp;
 	//scene.object_list = bunny;
-	sphere->next = sphere2;
-	scene.object_list = sphere;
+	//sphere->next = sphere2;
+	scene.object_list = sphere2;
 
 	// number of reflection levels to go down
 	int levels = 4;
@@ -206,12 +204,15 @@ int main(int argc, char *argv[])
 		for (x = 0; x < XSIZE; x += 1)
 		{
 
+		    // aa is a bool which indicates whether or not to use anti-aliasing
 		    if(aa){
 
                 Colour aa_accumulator;
 
+                // iterate through the grid of rays for the pixel
                 for(int i = 0; i < aa_rate; i += 1){
                 	for(int j=0; j < aa_rate; j += 1){
+                	    // get direction, which is moved slightly using a displacement - (i/aa_rate)/XSIZE
 						long double px = (((long double)x / (long double)XSIZE) - 0.5); // -0.5 to 0.5
 						root.direction.x = px + ((long double)i/aa_rate)/(long double)XSIZE;
 						root.direction.y = py + ((long double)j/aa_rate)/(long double)YSIZE;
@@ -219,41 +220,30 @@ int main(int argc, char *argv[])
 
 						root.direction.normalise();
 
+						// runs raytracer again, noting the colour returned
 						Colour return_col;
 						scene.raytrace(root, levels, scene.object_list, scene.light_list, return_col);
 
+						// adds returned colour to accumulator
 						aa_accumulator.r += return_col.r;
 						aa_accumulator.g += return_col.g;
 						aa_accumulator.b += return_col.b;
+
+                        /*
+						if(i==j==(int)aa_rate/2){
+						    if(aa_accumulator.r+aa_accumulator.g+aa_accumulator.r == 0){
+						        break;
+						    }
+						}
+                         */
+
                 	}
                 }
 
+                // averages out results using aa_rate^2
                 framebuffer[y][x].r = aa_accumulator.r/(aa_rate*aa_rate);
                 framebuffer[y][x].g = aa_accumulator.g/(aa_rate*aa_rate);
-                framebuffer[y][x].b = 0.0;
-
-
-
-                // why won't you just work
-				if(framebuffer[y][x].r > 1){
-					framebuffer[y][x].r = 1;
-				}else if (framebuffer[y][x].r < 0){
-					framebuffer[y][x].r = 0;
-				}
-
-				if(framebuffer[y][x].g > 1){
-					framebuffer[y][x].g = 1;
-				}else if (framebuffer[y][x].g < 0){
-					framebuffer[y][x].g = 0;
-				}
-
-				if(framebuffer[y][x].b > 1){
-					framebuffer[y][x].b = 1;
-				}else if (framebuffer[y][x].b < 0){
-					framebuffer[y][x].b = 0;
-				}
-
-
+                framebuffer[y][x].b = aa_accumulator.b/(aa_rate*aa_rate);
 
 			}else {
 				long double px = (((long double) x / (long double) XSIZE) - 0.5f); // -0.5 to 0.5
