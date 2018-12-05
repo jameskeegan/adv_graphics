@@ -13,8 +13,10 @@
 #include "colour.h"
 
 class Material {
-
+public:
 	Colour reflection;
+	Colour refraction;
+	double refractive_index;
 
 public:
 	virtual void compute_base_colour(Colour &result)
@@ -38,5 +40,19 @@ public:
 		reflection.r = ref;
 		reflection.g = ref;
 		reflection.b = ref;
+	}
+
+	long double get_refraction(){
+		return refraction.r;
+	}
+
+	long double get_refraction_index(){
+		return refractive_index;
+	}
+
+	void set_refraction(long double refr){
+		refraction.r = refr;
+		refraction.g = refr;
+		refraction.b = refr;
 	}
 };

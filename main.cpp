@@ -62,26 +62,11 @@ void write_framebuffer()
 
 			unsigned char un_char = (unsigned char) green;
 
-			if(green > 6.0){
-			    if(green < 12.0){
-			        green = 0.0;
-
-			    }
-			}
-
-            if(red > 6.0){
-                if(red < 12.0){
-                    red = 0.0;
-
-                }
-            }
-
-            if(blue > 6.0){
-                if(blue < 12.0){
-                    blue = 0.0;
-
-                }
-            }
+			// checks if values won't break my image
+			// values between 6.0 and 12.0 are basically " ", so in .ppm file it screws up by not recognising it
+			if((green > 6.0) && (green<12.0)) green=0.0;
+			if((red > 6.0) && (red<12.0)) red=0.0;
+			if((blue > 6.0) && (blue<12.0)) blue=0.0;
 
 
 
@@ -136,6 +121,16 @@ int main(int argc, char *argv[])
 	bp.specular.b = 0.0f;
 	bp.power = 40.0f;
 
+	bp.reflection.r = 0.5;
+	bp.reflection.g = 0.0;
+	bp.reflection.b = 0.0;
+	bp.refraction.r = 0.2;
+	bp.refraction.g = 0.2;
+	bp.refraction.b = 0.2;
+
+	// ri of water
+	bp.refractive_index = 1.333;
+
 	bp.set_reflection(0.5);
 
 	Phong sp2;
@@ -151,7 +146,11 @@ int main(int argc, char *argv[])
 	sp2.specular.b = 0.0f;
 	sp2.power = 40.0f;
 
-	sp2.set_reflection(0.5);
+	sp2.set_reflection(0.0);
+	sp2.set_refraction(0.5);
+
+	// ri of water
+	sp2.refractive_index = 1.333;
 
 	DirectionalLight *dl;
 
@@ -170,15 +169,15 @@ int main(int argc, char *argv[])
 
 	//PolyMesh *bunny = new PolyMesh((char *) mesh_name, transform);
 
-	Sphere *sphere = new Sphere(Vertex(0,-1,3), 1);
+	Sphere *sphere = new Sphere(Vertex(0,0,4), 1);
 	Sphere *sphere2 = new Sphere(Vertex(0,0,1.5), 1);
 
-	//sphere->material = &bp;
+	sphere->material = &bp;
 	sphere2->material = &sp2;
-	//bunny->material = &bp;
+	//bunny->material = &sp2;
 	//scene.object_list = bunny;
-	//sphere->next = sphere2;
-	scene.object_list = sphere2;
+	sphere->next = sphere2;
+	scene.object_list = sphere;
 
 	// number of reflection levels to go down
 	int levels = 4;
@@ -261,10 +260,10 @@ int main(int argc, char *argv[])
 
    }
 
+	write_framebuffer();
+
 	time = (clock()-start)/ (long double) CLOCKS_PER_SEC;
 
-	cerr << "Done in " << time << "seconds" << endl;
-
-	write_framebuffer();
+	cerr << "Done in " << time << " seconds" << endl;
 
 }

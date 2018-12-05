@@ -114,9 +114,19 @@ void Scene::raytrace(Ray ray, int level, Object *objects, Light *lights, Colour 
             colour.b += ref_co * reflection_colour.b;
 		}
 
+		//long double refraction_co = best_hit.what->material->get_refraction();
+		long double refr_co = best_hit.what->material->refraction.r;
+
 		// TODO: compute refraction ray if material supports it.
-		if(1)
-		{
+		if(refr_co>0){
+
+			// get colour of refractions
+			Colour refraction_colour = refraction_rays(ray, best_hit, level, objects, lights);
+
+			// add refraction colour onto main colour
+			colour.r += refr_co * refraction_colour.r;
+			colour.g += refr_co * refraction_colour.g;
+			colour.b += refr_co * refraction_colour.b;
 		}
 		
 	}
@@ -157,4 +167,65 @@ Colour Scene::reflective_rays(Ray ray, Hit best_hit, int level, Object *objects,
 	raytrace(reflection, level, objects, lights, reflection_colour);
 
     return reflection_colour;
+}
+
+Colour Scene::refraction_rays(Ray ray, Hit best_hit, int level, Object *objects, Light *lights) {
+
+	Vector og_ray_dir = ray.direction;
+	og_ray_dir.normalise();
+
+	// calculates angle of ___
+	Vector normal = best_hit.normal;
+	normal.normalise();
+
+	long double cos = normal.dot(ray.direction);
+	long double ir_ray = 1.0;
+	long double ir_medium = objects->material->refractive_index;
+
+	long double k_refr = objects->material->refraction.r;
+
+	Ray refraction_ray;
+
+
+
+	if(cos < 0) {
+	    cos *= -1;
+	}else{
+        normal.x *= -1;
+        normal.y *= -1;
+        normal.z *= -1;
+        swap(ir_ray, ir_medium);
+	}
+
+	// value equals n1/n2
+	long double n1n2 = ir_ray/ir_medium;
+
+	long double k = 1 - n1n2*n1n2*(1-cos*cos);
+	long double cost = sqrt(k);
+
+	// if true, then total internal reflection, so don't compute
+	if(k<0){
+	    k_refr = 1.0;
+	    refraction_ray.direction.x = 0.0;
+	    refraction_ray.direction.y = 0.0;
+	    refraction_ray.direction.z = 0.0;
+	}else{
+	    long double rpar = (ir_ray * cos - cost) / (ir_ray * cos + cost);
+	    long double rper = (cos - ir_ray * cost) / (cos + ir_ray*cost);
+		k_refr = 0.5 * (rpar*rpar + rper*rper);
+		refraction_ray.direction.x = n1n2 * ray.direction.x + (n1n2*cos - cost)*normal.x;
+		refraction_ray.direction.y = n1n2 * ray.direction.y + (n1n2*cos - cost)*normal.y;
+		refraction_ray.direction.z = n1n2 * ray.direction.z + (n1n2*cos - cost)*normal.z;
+		refraction_ray.direction.normalise();
+	}
+
+	refraction_ray.position.x = ray.position.x + 0.001*refraction_ray.direction.x;
+	refraction_ray.position.y = ray.position.y + 0.001*refraction_ray.direction.y;
+	refraction_ray.position.z = ray.position.z + 0.001*refraction_ray.direction.z;
+
+
+	Colour refracted_colour;
+	raytrace(refraction_ray, level -1, objects, lights, refracted_colour);
+
+	return refracted_colour;
 }
