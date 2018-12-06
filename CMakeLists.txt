@@ -45,4 +45,4 @@ add_executable(Coursework_CPP
         sphere.h
         transform.h
         vector.h
-        vertex.h)
+        vertex.h physical_light.cpp physical_light.h)

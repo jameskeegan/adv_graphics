@@ -139,6 +139,9 @@ PolyMesh::PolyMesh(char *file, Transform &transform)
   
   meshfile.close();
   cerr << "Meshfile read." << endl;
+
+  // make a bounding sphere around the object
+  make_bounding_sphere();
 }
 
 float PolyMesh::test_edge(Vector &normal, Vertex &p, Vertex &v1, Vertex &v0)
@@ -243,21 +246,102 @@ void PolyMesh::triangle_intersection(Ray ray, Hit &hit, int which_triangle)
 void PolyMesh::intersection(Ray ray, Hit &hit)
 {
   Hit current_hit;
+  Hit sphere_hit;
   int i;
 
   hit.flag = false;
+  sphere_hit.flag = false;
 
-  // Check each triangle any find closest if any intersecion
+  if(bounding){
 
+    bounding_sphere->intersection(ray, sphere_hit);
+
+    if(sphere_hit.flag){
+
+      mesh_intersection(ray, hit);
+
+    }
+  }else {
+    mesh_intersection(ray, hit);
+  }
+
+
+}
+
+void PolyMesh::make_bounding_sphere() {
+
+  // starting values for largest
+  long double largest_x = -10000000,  largest_y = -10000000, largest_z = -10000000;
+  long double smallest_x = 10000000, smallest_y = 10000000, smallest_z = 10000000;
+
+  // get the largest and smallest x and y
+  for(int i=0; i<vertex_count; i++){
+    if(vertex[i].x > largest_x){
+      largest_x = vertex[i].x;
+    }
+
+    if(vertex[i].x < smallest_x){
+      smallest_x = vertex[i].x;
+    }
+
+    if(vertex[i].y > largest_y){
+      largest_y = vertex[i].y;
+    }
+
+    if(vertex[i].y < smallest_y){
+      smallest_y = vertex[i].y;
+    }
+
+    if(vertex[i].z > largest_z){
+      largest_z = vertex[i].z;
+    }
+
+    if(vertex[i].z < smallest_z){
+      smallest_z = vertex[i].z;
+    }
+
+  }
+
+  long double differences[3] = {largest_x-smallest_x, largest_y-smallest_y, largest_z-smallest_z};
+  long double r;
+
+  // finds centre of each x, y, and z
+  long double centre_x = smallest_x + differences[0]/2;
+  long double centre_y = smallest_y + differences[1]/2;
+  long double centre_z = smallest_z + differences[2]/2;
+
+  // finds which one has the tallest distance, and therefore makes our radius
+  if((differences[0]>differences[1]) && (differences[0]>differences[2])){
+    r = differences[0]/2;
+  }else if((differences[1]>differences[0]) && (differences[1]>differences[2])){
+    r = differences[1]/2;
+  }else{
+    r = differences[2]/2;
+  }
+
+  // make new sphere, radius = r (* a little scalar to ensure it all fits), centre = midpoint of all of these
+  bounding_sphere = new Sphere(Vertex(centre_x, centre_y, centre_z), r*1.25);
+
+  // there is a bounding sphere
+  bounding = true;
+
+}
+
+void PolyMesh::mesh_intersection(Ray ray, Hit &hit) {
+  // took the original code and put it in this function here
+  Hit current_hit;
+  int i;
+
+  // Check each triangle any find closest if any intersection
   for(i = 0; i < triangle_count; i += 1)
   {
     triangle_intersection(ray, current_hit, i);
 
-    if (current_hit.flag != false)
+    if (current_hit.flag)
     {
-      if (hit.flag == false)
+      if (!hit.flag)
       {
-	hit = current_hit;
+        hit = current_hit;
 
       } else if (current_hit.t < hit.t)
       {
@@ -266,11 +350,12 @@ void PolyMesh::intersection(Ray ray, Hit &hit)
     }
   }
 
-  if (hit.flag == true)
+  if (hit.flag)
   {
     if(hit.normal.dot(ray.direction) > 0.0)
     {
       hit.normal.negate();
     }
   }
+
 }

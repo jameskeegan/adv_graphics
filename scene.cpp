@@ -68,7 +68,7 @@ void Scene::raytrace(Ray ray, int level, Object *objects, Light *lights, Colour 
 
 		Light *light = lights;
 
-		while (light != (Light *)0)
+		while (light != (Light *) nullptr)
 		{
 			Vector viewer;
 			Vector ldir;

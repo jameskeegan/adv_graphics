@@ -46,14 +46,6 @@ bool DirectionalLight::get_direction(Vertex &surface, Vector &dir)
 	// returns true if light is visible to object, false if object is blocked
 	return !shadow_hit.flag;
 
-
-
-#include "scene.h" at the top
-
-	// TODO: this is where the shadow rays should be generated.
-	// light contains a refence to the scene so that you can check
-	// all the objects.
-	return true;
 }
 
 void DirectionalLight::get_intensity(Vertex &surface, Colour &level)

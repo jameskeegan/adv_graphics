@@ -17,7 +17,6 @@ Sphere::Sphere(Vertex c, long double r)
 
 void Sphere::intersection(Ray ray, Hit &hit)
 {
-
 	Vector ro;
 
 	hit.flag = false;

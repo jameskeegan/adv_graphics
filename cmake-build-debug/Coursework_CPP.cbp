@@ -172,6 +172,12 @@
 		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/phong.h">
 			<Option target="Coursework_CPP"/>
 		</Unit>
+		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/physical_light.cpp">
+			<Option target="Coursework_CPP"/>
+		</Unit>
+		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/physical_light.h">
+			<Option target="Coursework_CPP"/>
+		</Unit>
 		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/polymesh.cpp">
 			<Option target="Coursework_CPP"/>
 		</Unit>

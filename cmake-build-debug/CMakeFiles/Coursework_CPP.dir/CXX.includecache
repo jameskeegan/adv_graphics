@@ -41,6 +41,8 @@ phong.h
 C:/Users/kegof/Documents/GitHub/adv_graphics/phong.h
 directional_light.h
 C:/Users/kegof/Documents/GitHub/adv_graphics/directional_light.h
+physical_light.h
+C:/Users/kegof/Documents/GitHub/adv_graphics/physical_light.h
 sphere.h
 C:/Users/kegof/Documents/GitHub/adv_graphics/sphere.h
 vertex.h
@@ -78,6 +80,10 @@ C:/Users/kegof/Documents/GitHub/adv_graphics/colour.h
 vector.h
 C:/Users/kegof/Documents/GitHub/adv_graphics/vector.h
 
+C:/Users/kegof/Documents/GitHub/adv_graphics/physical_light.h
+light.h
+C:/Users/kegof/Documents/GitHub/adv_graphics/light.h
+
 C:/Users/kegof/Documents/GitHub/adv_graphics/polymesh.h
 vertex.h
 C:/Users/kegof/Documents/GitHub/adv_graphics/vertex.h
@@ -85,6 +91,10 @@ object.h
 C:/Users/kegof/Documents/GitHub/adv_graphics/object.h
 transform.h
 C:/Users/kegof/Documents/GitHub/adv_graphics/transform.h
+sphere.h
+C:/Users/kegof/Documents/GitHub/adv_graphics/sphere.h
+vertex.h
+C:/Users/kegof/Documents/GitHub/adv_graphics/vertex.h
 
 C:/Users/kegof/Documents/GitHub/adv_graphics/ray.h
 vertex.h
