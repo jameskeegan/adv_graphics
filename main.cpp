@@ -181,21 +181,21 @@ int main(int argc, char *argv[])
 	//sphere->material = &bp;
 	sphere2->material = &sp2;
 	//sphere->next = sphere2;
-	scene.object_list = sphere2;
+	//scene.object_list = sphere2;
 
-    //bunny->material = &bp;
-    //scene.object_list = bunny;
+    bunny->material = &bp;
+    scene.object_list = bunny;
 
-	//bunny->get_largest_x();
+	//bunny->make_bounding_sphere();
 
 	// number of reflection levels to go down
 	int levels = 4;
 
 	// turns anti-aliasing on or off
-	bool aa = false;
+	bool aa = true;
 
 	// rate of AA - should be between 2 and 10 depending on AA level desired
-	int aa_rate = 4;
+	int aa_rate = 2;
 
 	Ray root(Vertex(0.0f, 0.0f, 0.0f),Vector(0.0f, 0.0f, 0.0f));
 
@@ -206,11 +206,12 @@ int main(int argc, char *argv[])
 
 	for(y = 0; y < YSIZE; y += 1)
 	{
-		//cerr << "Line " << y+1 << " of " << (int)YSIZE << endl;
+		cerr << "Line " << y+1 << " of " << (int)YSIZE << endl;
 		long double py = (((long double)y / (long double)YSIZE) - 0.5)*-1.0; // 0.5 to -0.5, flipped y axis
 
 		for (x = 0; x < XSIZE; x += 1)
 		{
+			//cerr << "Line " << y+1 << ", pixel " << x+1 << " of " << (int)YSIZE << endl;
 
 		    // aa is a bool which indicates whether or not to use anti-aliasing
 		    if(aa){
@@ -237,13 +238,13 @@ int main(int argc, char *argv[])
 						aa_accumulator.g += return_col.g;
 						aa_accumulator.b += return_col.b;
 
-                        /*
+
 						if(i==j==(int)aa_rate/2){
 						    if(aa_accumulator.r+aa_accumulator.g+aa_accumulator.r == 0){
 						        break;
 						    }
 						}
-                         */
+
 
                 	}
                 }
