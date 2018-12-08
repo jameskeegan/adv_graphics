@@ -11,6 +11,7 @@
 
 #include "vector.h"
 #include "colour.h"
+#include "vertex.h"
 
 class Material {
 
@@ -23,7 +24,7 @@ public:
 		result.g = 0.0f;
 		result.b = 0.0f;
 	}
-	virtual void compute_light_colour(Vector &viewer, Vector &normal, Vector &ldir, Colour &result)
+	virtual void compute_light_colour(Vector &viewer, Vector &normal, Vector &ldir, Vertex &is, Colour &result)
 	{
 		result.r = 0.0f;
 		result.g = 0.0f;

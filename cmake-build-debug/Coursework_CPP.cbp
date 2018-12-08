@@ -166,6 +166,12 @@
 		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/object.h">
 			<Option target="Coursework_CPP"/>
 		</Unit>
+		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/perlin_noise.cpp">
+			<Option target="Coursework_CPP"/>
+		</Unit>
+		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/perlin_noise.h">
+			<Option target="Coursework_CPP"/>
+		</Unit>
 		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/phong.cpp">
 			<Option target="Coursework_CPP"/>
 		</Unit>
@@ -197,6 +203,12 @@
 			<Option target="Coursework_CPP"/>
 		</Unit>
 		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/sphere.h">
+			<Option target="Coursework_CPP"/>
+		</Unit>
+		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/texture.cpp">
+			<Option target="Coursework_CPP"/>
+		</Unit>
+		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/texture.h">
 			<Option target="Coursework_CPP"/>
 		</Unit>
 		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/transform.h">

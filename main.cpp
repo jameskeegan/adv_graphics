@@ -14,6 +14,7 @@
 #include "polymesh.h"
 #include "phong.h"
 #include "directional_light.h"
+#include "texture.h"
 #include "physical_light.h"
 #include "sphere.h"
 #include "vertex.h"
@@ -24,8 +25,8 @@
 #include <thread>
 using namespace std;
 
-#define XSIZE 64
-#define YSIZE 64
+#define XSIZE 1024
+#define YSIZE 1024
 
 Colour framebuffer[YSIZE][XSIZE];
 
@@ -61,8 +62,7 @@ void write_framebuffer()
 			long double green = 255.0*framebuffer[y][x].g;
 			long double blue = 255.0*framebuffer[y][x].b;
 
-			unsigned char un_char = (unsigned char) green;
-
+			// checks if they don't equal " ", which breaks the ppm file
 			if(green > 6.0){
 			    if(green < 12.0){
 			        green = 0.0;
@@ -84,27 +84,12 @@ void write_framebuffer()
                 }
             }
 
-
-
-            /*
-            if (6.9 > green > 11.0){
-                //cout << un_char << "   " << green << endl;
-                green = 12.0;
-                cout << "opened" << endl;
-                fout << (unsigned char)(0.0) << (unsigned char)(50.0) << (unsigned char)(0.0);
-            }else{
-
-                fout << (unsigned char)(0.0) << (unsigned char)(green) << (unsigned char)(0.0);
+            if(red != NULL){
+				//cerr << (unsigned char) green << "     " << green << endl;
             }
 
-            */
-
-            if(6.9 < green < 11.0){
-                //cout << un_char << "   " << green << endl;
-            }
 
             fout << (unsigned char)(red) << (unsigned char)(green) << (unsigned char)(blue);
-
 		}
 	}
 
@@ -137,7 +122,7 @@ int main(int argc, char *argv[])
 	bp.specular.b = 0.0f;
 	bp.power = 40.0f;
 
-	bp.set_reflection(0.0);
+	bp.set_reflection(0.5);
 
 	Phong sp2;
 
@@ -153,6 +138,10 @@ int main(int argc, char *argv[])
 	sp2.power = 40.0f;
 
 	sp2.set_reflection(0.5);
+
+	Texture tx;
+
+	tx.set_reflection(0.0);
 
 	DirectionalLight *dl;
 
@@ -173,18 +162,22 @@ int main(int argc, char *argv[])
 
 	const char* mesh_name = "..//bunny_zipper.kcply";
 
-	PolyMesh *bunny = new PolyMesh((char *) mesh_name, transform);
+	//PolyMesh *bunny = new PolyMesh((char *) mesh_name, transform);
 
-	Sphere *sphere = new Sphere(Vertex(0,-1,3), 1);
-	Sphere *sphere2 = new Sphere(Vertex(-0.168404, 0.101542, 2.01537), 0.778495*1.2);
+	Sphere *sphere = new Sphere(Vertex(0,0,1.5), 1.0);
+	Sphere *sphere2 = new Sphere(Vertex(0, 1, 3), 1.0);
+	//Sphere *sphere2 = new Sphere(Vertex(-0.168404, 0.101542, 2.01537), 0.778495*1.25);
 
-	//sphere->material = &bp;
+	sphere->material = &tx;
 	sphere2->material = &sp2;
-	//sphere->next = sphere2;
-	//scene.object_list = sphere2;
+	//bunny->material = &bp;
 
-    bunny->material = &bp;
-    scene.object_list = bunny;
+	//sphere->next = sphere2;
+	scene.object_list = sphere;
+	//scene.object_list = bunny;
+	//scene.object_list = bunny;
+
+
 
 	//bunny->make_bounding_sphere();
 
@@ -195,7 +188,7 @@ int main(int argc, char *argv[])
 	bool aa = true;
 
 	// rate of AA - should be between 2 and 10 depending on AA level desired
-	int aa_rate = 2;
+	int aa_rate = 4;
 
 	Ray root(Vertex(0.0f, 0.0f, 0.0f),Vector(0.0f, 0.0f, 0.0f));
 
@@ -206,7 +199,7 @@ int main(int argc, char *argv[])
 
 	for(y = 0; y < YSIZE; y += 1)
 	{
-		cerr << "Line " << y+1 << " of " << (int)YSIZE << endl;
+		//cerr << "Line " << y+1 << " of " << (int)YSIZE << endl;
 		long double py = (((long double)y / (long double)YSIZE) - 0.5)*-1.0; // 0.5 to -0.5, flipped y axis
 
 		for (x = 0; x < XSIZE; x += 1)
@@ -226,6 +219,9 @@ int main(int argc, char *argv[])
 						root.direction.x = px + ((long double)i/aa_rate)/(long double)XSIZE;
 						root.direction.y = py + ((long double)j/aa_rate)/(long double)YSIZE;
 						root.direction.z = 0.5;
+
+						double offset_x = ((double)i/aa_rate)/XSIZE;
+						double offset_y = ((double)j/aa_rate)/YSIZE;
 
 						root.direction.normalise();
 

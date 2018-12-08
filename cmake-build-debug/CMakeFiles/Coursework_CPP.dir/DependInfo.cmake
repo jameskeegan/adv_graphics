@@ -6,11 +6,13 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/kegof/Documents/GitHub/adv_graphics/directional_light.cpp" "C:/Users/kegof/Documents/GitHub/adv_graphics/cmake-build-debug/CMakeFiles/Coursework_CPP.dir/directional_light.cpp.obj"
   "C:/Users/kegof/Documents/GitHub/adv_graphics/main.cpp" "C:/Users/kegof/Documents/GitHub/adv_graphics/cmake-build-debug/CMakeFiles/Coursework_CPP.dir/main.cpp.obj"
+  "C:/Users/kegof/Documents/GitHub/adv_graphics/perlin_noise.cpp" "C:/Users/kegof/Documents/GitHub/adv_graphics/cmake-build-debug/CMakeFiles/Coursework_CPP.dir/perlin_noise.cpp.obj"
   "C:/Users/kegof/Documents/GitHub/adv_graphics/phong.cpp" "C:/Users/kegof/Documents/GitHub/adv_graphics/cmake-build-debug/CMakeFiles/Coursework_CPP.dir/phong.cpp.obj"
   "C:/Users/kegof/Documents/GitHub/adv_graphics/physical_light.cpp" "C:/Users/kegof/Documents/GitHub/adv_graphics/cmake-build-debug/CMakeFiles/Coursework_CPP.dir/physical_light.cpp.obj"
   "C:/Users/kegof/Documents/GitHub/adv_graphics/polymesh.cpp" "C:/Users/kegof/Documents/GitHub/adv_graphics/cmake-build-debug/CMakeFiles/Coursework_CPP.dir/polymesh.cpp.obj"
   "C:/Users/kegof/Documents/GitHub/adv_graphics/scene.cpp" "C:/Users/kegof/Documents/GitHub/adv_graphics/cmake-build-debug/CMakeFiles/Coursework_CPP.dir/scene.cpp.obj"
   "C:/Users/kegof/Documents/GitHub/adv_graphics/sphere.cpp" "C:/Users/kegof/Documents/GitHub/adv_graphics/cmake-build-debug/CMakeFiles/Coursework_CPP.dir/sphere.cpp.obj"
+  "C:/Users/kegof/Documents/GitHub/adv_graphics/texture.cpp" "C:/Users/kegof/Documents/GitHub/adv_graphics/cmake-build-debug/CMakeFiles/Coursework_CPP.dir/texture.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

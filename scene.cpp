@@ -89,7 +89,7 @@ void Scene::raytrace(Ray ray, int level, Object *objects, Light *lights, Colour 
 
 				light->get_intensity(best_hit.position, scaling);
 
-				best_hit.what->material->compute_light_colour(viewer, best_hit.normal, ldir, intensity);
+				best_hit.what->material->compute_light_colour(viewer, best_hit.normal, ldir, best_hit.position, intensity);
 
 				intensity.scale(scaling);
 

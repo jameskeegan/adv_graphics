@@ -22,21 +22,29 @@ CMakeFiles/Coursework_CPP.dir/main.cpp.obj: ../light.h
 CMakeFiles/Coursework_CPP.dir/main.cpp.obj: ../main.cpp
 CMakeFiles/Coursework_CPP.dir/main.cpp.obj: ../material.h
 CMakeFiles/Coursework_CPP.dir/main.cpp.obj: ../object.h
+CMakeFiles/Coursework_CPP.dir/main.cpp.obj: ../perlin_noise.h
 CMakeFiles/Coursework_CPP.dir/main.cpp.obj: ../phong.h
 CMakeFiles/Coursework_CPP.dir/main.cpp.obj: ../physical_light.h
 CMakeFiles/Coursework_CPP.dir/main.cpp.obj: ../polymesh.h
 CMakeFiles/Coursework_CPP.dir/main.cpp.obj: ../ray.h
 CMakeFiles/Coursework_CPP.dir/main.cpp.obj: ../scene.h
 CMakeFiles/Coursework_CPP.dir/main.cpp.obj: ../sphere.h
+CMakeFiles/Coursework_CPP.dir/main.cpp.obj: ../texture.h
 CMakeFiles/Coursework_CPP.dir/main.cpp.obj: ../transform.h
 CMakeFiles/Coursework_CPP.dir/main.cpp.obj: ../vector.h
 CMakeFiles/Coursework_CPP.dir/main.cpp.obj: ../vertex.h
+
+CMakeFiles/Coursework_CPP.dir/perlin_noise.cpp.obj: ../colour.h
+CMakeFiles/Coursework_CPP.dir/perlin_noise.cpp.obj: ../perlin_noise.cpp
+CMakeFiles/Coursework_CPP.dir/perlin_noise.cpp.obj: ../perlin_noise.h
+CMakeFiles/Coursework_CPP.dir/perlin_noise.cpp.obj: ../vector.h
 
 CMakeFiles/Coursework_CPP.dir/phong.cpp.obj: ../colour.h
 CMakeFiles/Coursework_CPP.dir/phong.cpp.obj: ../material.h
 CMakeFiles/Coursework_CPP.dir/phong.cpp.obj: ../phong.cpp
 CMakeFiles/Coursework_CPP.dir/phong.cpp.obj: ../phong.h
 CMakeFiles/Coursework_CPP.dir/phong.cpp.obj: ../vector.h
+CMakeFiles/Coursework_CPP.dir/phong.cpp.obj: ../vertex.h
 
 CMakeFiles/Coursework_CPP.dir/physical_light.cpp.obj: ../Vector.h
 CMakeFiles/Coursework_CPP.dir/physical_light.cpp.obj: ../colour.h
@@ -86,4 +94,12 @@ CMakeFiles/Coursework_CPP.dir/sphere.cpp.obj: ../sphere.cpp
 CMakeFiles/Coursework_CPP.dir/sphere.cpp.obj: ../sphere.h
 CMakeFiles/Coursework_CPP.dir/sphere.cpp.obj: ../vector.h
 CMakeFiles/Coursework_CPP.dir/sphere.cpp.obj: ../vertex.h
+
+CMakeFiles/Coursework_CPP.dir/texture.cpp.obj: ../colour.h
+CMakeFiles/Coursework_CPP.dir/texture.cpp.obj: ../material.h
+CMakeFiles/Coursework_CPP.dir/texture.cpp.obj: ../perlin_noise.h
+CMakeFiles/Coursework_CPP.dir/texture.cpp.obj: ../texture.cpp
+CMakeFiles/Coursework_CPP.dir/texture.cpp.obj: ../texture.h
+CMakeFiles/Coursework_CPP.dir/texture.cpp.obj: ../vector.h
+CMakeFiles/Coursework_CPP.dir/texture.cpp.obj: ../vertex.h
 

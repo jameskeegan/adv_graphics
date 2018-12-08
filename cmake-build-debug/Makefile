@@ -176,6 +176,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles\Coursework_CPP.dir\build.make CMakeFiles/Coursework_CPP.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+perlin_noise.obj: perlin_noise.cpp.obj
+
+.PHONY : perlin_noise.obj
+
+# target to build an object file
+perlin_noise.cpp.obj:
+	$(MAKE) -f CMakeFiles\Coursework_CPP.dir\build.make CMakeFiles/Coursework_CPP.dir/perlin_noise.cpp.obj
+.PHONY : perlin_noise.cpp.obj
+
+perlin_noise.i: perlin_noise.cpp.i
+
+.PHONY : perlin_noise.i
+
+# target to preprocess a source file
+perlin_noise.cpp.i:
+	$(MAKE) -f CMakeFiles\Coursework_CPP.dir\build.make CMakeFiles/Coursework_CPP.dir/perlin_noise.cpp.i
+.PHONY : perlin_noise.cpp.i
+
+perlin_noise.s: perlin_noise.cpp.s
+
+.PHONY : perlin_noise.s
+
+# target to generate assembly for a file
+perlin_noise.cpp.s:
+	$(MAKE) -f CMakeFiles\Coursework_CPP.dir\build.make CMakeFiles/Coursework_CPP.dir/perlin_noise.cpp.s
+.PHONY : perlin_noise.cpp.s
+
 phong.obj: phong.cpp.obj
 
 .PHONY : phong.obj
@@ -311,6 +338,33 @@ sphere.cpp.s:
 	$(MAKE) -f CMakeFiles\Coursework_CPP.dir\build.make CMakeFiles/Coursework_CPP.dir/sphere.cpp.s
 .PHONY : sphere.cpp.s
 
+texture.obj: texture.cpp.obj
+
+.PHONY : texture.obj
+
+# target to build an object file
+texture.cpp.obj:
+	$(MAKE) -f CMakeFiles\Coursework_CPP.dir\build.make CMakeFiles/Coursework_CPP.dir/texture.cpp.obj
+.PHONY : texture.cpp.obj
+
+texture.i: texture.cpp.i
+
+.PHONY : texture.i
+
+# target to preprocess a source file
+texture.cpp.i:
+	$(MAKE) -f CMakeFiles\Coursework_CPP.dir\build.make CMakeFiles/Coursework_CPP.dir/texture.cpp.i
+.PHONY : texture.cpp.i
+
+texture.s: texture.cpp.s
+
+.PHONY : texture.s
+
+# target to generate assembly for a file
+texture.cpp.s:
+	$(MAKE) -f CMakeFiles\Coursework_CPP.dir\build.make CMakeFiles/Coursework_CPP.dir/texture.cpp.s
+.PHONY : texture.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -326,6 +380,9 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... perlin_noise.obj
+	@echo ... perlin_noise.i
+	@echo ... perlin_noise.s
 	@echo ... phong.obj
 	@echo ... phong.i
 	@echo ... phong.s
@@ -341,6 +398,9 @@ help:
 	@echo ... sphere.obj
 	@echo ... sphere.i
 	@echo ... sphere.s
+	@echo ... texture.obj
+	@echo ... texture.i
+	@echo ... texture.s
 .PHONY : help
 
 

@@ -18,7 +18,7 @@ void Phong::compute_base_colour(Colour &result)
 	result.b = ambient.b;
 }
 
-void Phong::compute_light_colour(Vector &viewer, Vector &normal, Vector &ldir, Colour &result)
+void Phong::compute_light_colour(Vector &viewer, Vector &normal, Vector &ldir, Vertex &is, Colour &result)
 {
 
 	long double diff;

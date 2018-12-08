@@ -23,5 +23,5 @@ public:
 
 	void compute_base_colour(Colour &result);
 
-	void compute_light_colour(Vector &viewer, Vector &normal, Vector &ldir, Colour &result);
+	void compute_light_colour(Vector &viewer, Vector &normal, Vector &ldir, Vertex &is, Colour &result);
 };
