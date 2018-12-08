@@ -45,4 +45,4 @@ add_executable(Coursework_CPP
         sphere.h
         transform.h
         vector.h
-        vertex.h physical_light.cpp physical_light.h perlin_noise.cpp perlin_noise.h texture.cpp texture.h)
+        vertex.h physical_light.cpp physical_light.h perlin_noise.cpp perlin_noise.h phong_texture.cpp phong_texture.h)

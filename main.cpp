@@ -13,8 +13,8 @@
 #include "sphere.h"
 #include "polymesh.h"
 #include "phong.h"
+#include "phong_texture.h"
 #include "directional_light.h"
-#include "texture.h"
 #include "physical_light.h"
 #include "sphere.h"
 #include "vertex.h"
@@ -84,11 +84,6 @@ void write_framebuffer()
                 }
             }
 
-            if(red != NULL){
-				//cerr << (unsigned char) green << "     " << green << endl;
-            }
-
-
             fout << (unsigned char)(red) << (unsigned char)(green) << (unsigned char)(blue);
 		}
 	}
@@ -139,9 +134,18 @@ int main(int argc, char *argv[])
 
 	sp2.set_reflection(0.5);
 
-	Texture tx;
+	// creates phong with texture
+	PhongTexture tex;
 
-	tx.set_reflection(0.0);
+	tex.diffuse.r = 0.2f;
+	tex.diffuse.g = 0.2f;
+	tex.diffuse.b = 0.2f;
+	tex.specular.r = 0.4f;
+	tex.specular.g = 0.4f;
+	tex.specular.b = 0.4f;
+	tex.power = 40.0f;
+
+	tex.set_reflection(0.0);
 
 	DirectionalLight *dl;
 
@@ -168,7 +172,7 @@ int main(int argc, char *argv[])
 	Sphere *sphere2 = new Sphere(Vertex(0, 1, 3), 1.0);
 	//Sphere *sphere2 = new Sphere(Vertex(-0.168404, 0.101542, 2.01537), 0.778495*1.25);
 
-	sphere->material = &tx;
+	sphere->material = &tex;
 	sphere2->material = &sp2;
 	//bunny->material = &bp;
 

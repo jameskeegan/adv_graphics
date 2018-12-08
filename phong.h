@@ -21,7 +21,7 @@ public:
 	Colour specular;
 	long double  power;
 
-	void compute_base_colour(Colour &result);
+	void compute_base_colour(Colour &result, Vertex &is);
 
-	void compute_light_colour(Vector &viewer, Vector &normal, Vector &ldir, Vertex &is, Colour &result);
+	void compute_light_colour(Vector &viewer, Vector &normal, Vector &ldir, Colour &result);
 };

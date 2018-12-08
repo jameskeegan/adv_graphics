@@ -11,14 +11,14 @@
 
 // A simple Phong based lighting model
 
-void Phong::compute_base_colour(Colour &result)
+void Phong::compute_base_colour(Colour &result, Vertex &is)
 {
 	result.r = ambient.r;
 	result.g = ambient.g;
 	result.b = ambient.b;
 }
 
-void Phong::compute_light_colour(Vector &viewer, Vector &normal, Vector &ldir, Vertex &is, Colour &result)
+void Phong::compute_light_colour(Vector &viewer, Vector &normal, Vector &ldir, Colour &result)
 {
 
 	long double diff;

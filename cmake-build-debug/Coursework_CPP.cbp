@@ -178,6 +178,12 @@
 		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/phong.h">
 			<Option target="Coursework_CPP"/>
 		</Unit>
+		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/phong_texture.cpp">
+			<Option target="Coursework_CPP"/>
+		</Unit>
+		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/phong_texture.h">
+			<Option target="Coursework_CPP"/>
+		</Unit>
 		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/physical_light.cpp">
 			<Option target="Coursework_CPP"/>
 		</Unit>
@@ -203,12 +209,6 @@
 			<Option target="Coursework_CPP"/>
 		</Unit>
 		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/sphere.h">
-			<Option target="Coursework_CPP"/>
-		</Unit>
-		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/texture.cpp">
-			<Option target="Coursework_CPP"/>
-		</Unit>
-		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/texture.h">
 			<Option target="Coursework_CPP"/>
 		</Unit>
 		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/transform.h">

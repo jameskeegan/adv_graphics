@@ -168,19 +168,19 @@ CMakeFiles/Coursework_CPP.dir/perlin_noise.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Coursework_CPP.dir/perlin_noise.cpp.s"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\kegof\Documents\GitHub\adv_graphics\perlin_noise.cpp -o CMakeFiles\Coursework_CPP.dir\perlin_noise.cpp.s
 
-CMakeFiles/Coursework_CPP.dir/texture.cpp.obj: CMakeFiles/Coursework_CPP.dir/flags.make
-CMakeFiles/Coursework_CPP.dir/texture.cpp.obj: CMakeFiles/Coursework_CPP.dir/includes_CXX.rsp
-CMakeFiles/Coursework_CPP.dir/texture.cpp.obj: ../texture.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\kegof\Documents\GitHub\adv_graphics\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Coursework_CPP.dir/texture.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Coursework_CPP.dir\texture.cpp.obj -c C:\Users\kegof\Documents\GitHub\adv_graphics\texture.cpp
+CMakeFiles/Coursework_CPP.dir/phong_texture.cpp.obj: CMakeFiles/Coursework_CPP.dir/flags.make
+CMakeFiles/Coursework_CPP.dir/phong_texture.cpp.obj: CMakeFiles/Coursework_CPP.dir/includes_CXX.rsp
+CMakeFiles/Coursework_CPP.dir/phong_texture.cpp.obj: ../phong_texture.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\kegof\Documents\GitHub\adv_graphics\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Coursework_CPP.dir/phong_texture.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Coursework_CPP.dir\phong_texture.cpp.obj -c C:\Users\kegof\Documents\GitHub\adv_graphics\phong_texture.cpp
 
-CMakeFiles/Coursework_CPP.dir/texture.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Coursework_CPP.dir/texture.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\kegof\Documents\GitHub\adv_graphics\texture.cpp > CMakeFiles\Coursework_CPP.dir\texture.cpp.i
+CMakeFiles/Coursework_CPP.dir/phong_texture.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Coursework_CPP.dir/phong_texture.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\kegof\Documents\GitHub\adv_graphics\phong_texture.cpp > CMakeFiles\Coursework_CPP.dir\phong_texture.cpp.i
 
-CMakeFiles/Coursework_CPP.dir/texture.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Coursework_CPP.dir/texture.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\kegof\Documents\GitHub\adv_graphics\texture.cpp -o CMakeFiles\Coursework_CPP.dir\texture.cpp.s
+CMakeFiles/Coursework_CPP.dir/phong_texture.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Coursework_CPP.dir/phong_texture.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\kegof\Documents\GitHub\adv_graphics\phong_texture.cpp -o CMakeFiles\Coursework_CPP.dir\phong_texture.cpp.s
 
 # Object files for target Coursework_CPP
 Coursework_CPP_OBJECTS = \
@@ -192,7 +192,7 @@ Coursework_CPP_OBJECTS = \
 "CMakeFiles/Coursework_CPP.dir/sphere.cpp.obj" \
 "CMakeFiles/Coursework_CPP.dir/physical_light.cpp.obj" \
 "CMakeFiles/Coursework_CPP.dir/perlin_noise.cpp.obj" \
-"CMakeFiles/Coursework_CPP.dir/texture.cpp.obj"
+"CMakeFiles/Coursework_CPP.dir/phong_texture.cpp.obj"
 
 # External object files for target Coursework_CPP
 Coursework_CPP_EXTERNAL_OBJECTS =
@@ -205,7 +205,7 @@ Coursework_CPP.exe: CMakeFiles/Coursework_CPP.dir/scene.cpp.obj
 Coursework_CPP.exe: CMakeFiles/Coursework_CPP.dir/sphere.cpp.obj
 Coursework_CPP.exe: CMakeFiles/Coursework_CPP.dir/physical_light.cpp.obj
 Coursework_CPP.exe: CMakeFiles/Coursework_CPP.dir/perlin_noise.cpp.obj
-Coursework_CPP.exe: CMakeFiles/Coursework_CPP.dir/texture.cpp.obj
+Coursework_CPP.exe: CMakeFiles/Coursework_CPP.dir/phong_texture.cpp.obj
 Coursework_CPP.exe: CMakeFiles/Coursework_CPP.dir/build.make
 Coursework_CPP.exe: CMakeFiles/Coursework_CPP.dir/linklibs.rsp
 Coursework_CPP.exe: CMakeFiles/Coursework_CPP.dir/objects1.rsp

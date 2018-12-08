@@ -26,15 +26,21 @@ iostream
 vector
 -
 
-C:/Users/kegof/Documents/GitHub/adv_graphics/texture.cpp
-texture.h
-C:/Users/kegof/Documents/GitHub/adv_graphics/texture.h
-cmath
--
-
-C:/Users/kegof/Documents/GitHub/adv_graphics/texture.h
+C:/Users/kegof/Documents/GitHub/adv_graphics/phong.h
 material.h
 C:/Users/kegof/Documents/GitHub/adv_graphics/material.h
+colour.h
+C:/Users/kegof/Documents/GitHub/adv_graphics/colour.h
+vector.h
+C:/Users/kegof/Documents/GitHub/adv_graphics/vector.h
+
+C:/Users/kegof/Documents/GitHub/adv_graphics/phong_texture.cpp
+phong_texture.h
+C:/Users/kegof/Documents/GitHub/adv_graphics/phong_texture.h
+
+C:/Users/kegof/Documents/GitHub/adv_graphics/phong_texture.h
+phong.h
+C:/Users/kegof/Documents/GitHub/adv_graphics/phong.h
 perlin_noise.h
 C:/Users/kegof/Documents/GitHub/adv_graphics/perlin_noise.h
 

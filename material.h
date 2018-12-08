@@ -18,13 +18,13 @@ class Material {
 	Colour reflection;
 
 public:
-	virtual void compute_base_colour(Colour &result)
+	virtual void compute_base_colour(Colour &result, Vertex &is)
 	{
 		result.r = 0.0f;
 		result.g = 0.0f;
 		result.b = 0.0f;
 	}
-	virtual void compute_light_colour(Vector &viewer, Vector &normal, Vector &ldir, Vertex &is, Colour &result)
+	virtual void compute_light_colour(Vector &viewer, Vector &normal, Vector &ldir, Colour &result)
 	{
 		result.r = 0.0f;
 		result.g = 0.0f;

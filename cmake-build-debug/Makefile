@@ -230,6 +230,33 @@ phong.cpp.s:
 	$(MAKE) -f CMakeFiles\Coursework_CPP.dir\build.make CMakeFiles/Coursework_CPP.dir/phong.cpp.s
 .PHONY : phong.cpp.s
 
+phong_texture.obj: phong_texture.cpp.obj
+
+.PHONY : phong_texture.obj
+
+# target to build an object file
+phong_texture.cpp.obj:
+	$(MAKE) -f CMakeFiles\Coursework_CPP.dir\build.make CMakeFiles/Coursework_CPP.dir/phong_texture.cpp.obj
+.PHONY : phong_texture.cpp.obj
+
+phong_texture.i: phong_texture.cpp.i
+
+.PHONY : phong_texture.i
+
+# target to preprocess a source file
+phong_texture.cpp.i:
+	$(MAKE) -f CMakeFiles\Coursework_CPP.dir\build.make CMakeFiles/Coursework_CPP.dir/phong_texture.cpp.i
+.PHONY : phong_texture.cpp.i
+
+phong_texture.s: phong_texture.cpp.s
+
+.PHONY : phong_texture.s
+
+# target to generate assembly for a file
+phong_texture.cpp.s:
+	$(MAKE) -f CMakeFiles\Coursework_CPP.dir\build.make CMakeFiles/Coursework_CPP.dir/phong_texture.cpp.s
+.PHONY : phong_texture.cpp.s
+
 physical_light.obj: physical_light.cpp.obj
 
 .PHONY : physical_light.obj
@@ -338,33 +365,6 @@ sphere.cpp.s:
 	$(MAKE) -f CMakeFiles\Coursework_CPP.dir\build.make CMakeFiles/Coursework_CPP.dir/sphere.cpp.s
 .PHONY : sphere.cpp.s
 
-texture.obj: texture.cpp.obj
-
-.PHONY : texture.obj
-
-# target to build an object file
-texture.cpp.obj:
-	$(MAKE) -f CMakeFiles\Coursework_CPP.dir\build.make CMakeFiles/Coursework_CPP.dir/texture.cpp.obj
-.PHONY : texture.cpp.obj
-
-texture.i: texture.cpp.i
-
-.PHONY : texture.i
-
-# target to preprocess a source file
-texture.cpp.i:
-	$(MAKE) -f CMakeFiles\Coursework_CPP.dir\build.make CMakeFiles/Coursework_CPP.dir/texture.cpp.i
-.PHONY : texture.cpp.i
-
-texture.s: texture.cpp.s
-
-.PHONY : texture.s
-
-# target to generate assembly for a file
-texture.cpp.s:
-	$(MAKE) -f CMakeFiles\Coursework_CPP.dir\build.make CMakeFiles/Coursework_CPP.dir/texture.cpp.s
-.PHONY : texture.cpp.s
-
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -386,6 +386,9 @@ help:
 	@echo ... phong.obj
 	@echo ... phong.i
 	@echo ... phong.s
+	@echo ... phong_texture.obj
+	@echo ... phong_texture.i
+	@echo ... phong_texture.s
 	@echo ... physical_light.obj
 	@echo ... physical_light.i
 	@echo ... physical_light.s
@@ -398,9 +401,6 @@ help:
 	@echo ... sphere.obj
 	@echo ... sphere.i
 	@echo ... sphere.s
-	@echo ... texture.obj
-	@echo ... texture.i
-	@echo ... texture.s
 .PHONY : help
 
 
