@@ -26,8 +26,8 @@
 #include <thread>
 using namespace std;
 
-#define XSIZE 256
-#define YSIZE 256
+#define XSIZE 1024
+#define YSIZE 1024
 
 Colour framebuffer[YSIZE][XSIZE];
 
