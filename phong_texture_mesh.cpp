@@ -6,6 +6,8 @@
 #include "object.h"
 
 void PhongTextureMesh::compute_base_colour(Colour &result, Hit &hit) {
+    /*
+
     Vector bary;
 
     Vector a, b, c;
@@ -70,7 +72,25 @@ void PhongTextureMesh::compute_base_colour(Colour &result, Hit &hit) {
     result.g = perlin->p_noise[v_int][u_int].g * ambient.g;
     result.b = perlin->p_noise[v_int][u_int].b * ambient.b;
 
-    hit.what.
+    */
+
+    Vector scaled_intersection;
+
+    scaled_intersection.x = hit.position.x + abs(hit.what->smallest_x);
+    scaled_intersection.y = hit.position.y + abs(hit.what->smallest_y);
+
+    long double ratio_x = scaled_intersection.x / (abs(hit.what->smallest_x) + abs(hit.what->largest_x));
+    long double ratio_y = scaled_intersection.y / (abs(hit.what->smallest_y) + abs(hit.what->largest_y));
+
+    ratio_x *= perlin->dimensions;
+    ratio_y *= perlin->dimensions;
+
+    int u = (int) ratio_x;
+    int v = (int) ratio_y;
+
+    result.r = perlin->p_noise[u][v].r * ambient.r;
+    result.g = perlin->p_noise[u][v].g * ambient.g;
+    result.b = perlin->p_noise[u][v].b * ambient.b;
 
 }
 

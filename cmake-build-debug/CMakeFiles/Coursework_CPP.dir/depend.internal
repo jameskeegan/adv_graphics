@@ -65,10 +65,12 @@ CMakeFiles/Coursework_CPP.dir/phong_texture_mesh.cpp.obj
  C:/Users/kegof/Documents/GitHub/adv_graphics/colour.h
  C:/Users/kegof/Documents/GitHub/adv_graphics/hit.h
  C:/Users/kegof/Documents/GitHub/adv_graphics/material.h
+ C:/Users/kegof/Documents/GitHub/adv_graphics/object.h
  C:/Users/kegof/Documents/GitHub/adv_graphics/perlin_noise.h
  C:/Users/kegof/Documents/GitHub/adv_graphics/phong.h
  C:/Users/kegof/Documents/GitHub/adv_graphics/phong_texture_mesh.cpp
  C:/Users/kegof/Documents/GitHub/adv_graphics/phong_texture_mesh.h
+ C:/Users/kegof/Documents/GitHub/adv_graphics/ray.h
  C:/Users/kegof/Documents/GitHub/adv_graphics/vector.h
  C:/Users/kegof/Documents/GitHub/adv_graphics/vertex.h
 CMakeFiles/Coursework_CPP.dir/physical_light.cpp.obj

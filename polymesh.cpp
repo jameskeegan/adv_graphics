@@ -285,44 +285,50 @@ void PolyMesh::intersection(Ray ray, Hit &hit)
 void PolyMesh::make_bounding_sphere() {
 
   // starting values for largest
-  long double largest_x = -10000000,  largest_y = -10000000, largest_z = -10000000;
-  long double smallest_x = 10000000, smallest_y = 10000000, smallest_z = 10000000;
+  long double l_x = -10000000,  l_y = -10000000, l_z = -10000000;
+  long double s_x = 10000000, s_y = 10000000, s_z = 10000000;
 
   // get the largest and smallest x and y
   for(int i=0; i<vertex_count; i++){
-    if(vertex[i].x > largest_x){
-      largest_x = vertex[i].x;
+    if(vertex[i].x > l_x){
+      l_x = vertex[i].x;
     }
 
-    if(vertex[i].x < smallest_x){
-      smallest_x = vertex[i].x;
+    if(vertex[i].x < s_x){
+      s_x = vertex[i].x;
     }
 
-    if(vertex[i].y > largest_y){
-      largest_y = vertex[i].y;
+    if(vertex[i].y > l_y){
+      l_y = vertex[i].y;
     }
 
-    if(vertex[i].y < smallest_y){
-      smallest_y = vertex[i].y;
+    if(vertex[i].y < s_y){
+      s_y = vertex[i].y;
     }
 
-    if(vertex[i].z > largest_z){
-      largest_z = vertex[i].z;
+    if(vertex[i].z > l_z){
+      l_z = vertex[i].z;
     }
 
-    if(vertex[i].z < smallest_z){
-      smallest_z = vertex[i].z;
+    if(vertex[i].z < s_z){
+      s_z = vertex[i].z;
     }
 
   }
 
-  long double differences[3] = {largest_x-smallest_x, largest_y-smallest_y, largest_z-smallest_z};
+  smallest_x = s_x;
+  smallest_y = s_y;
+
+  largest_x = l_x;
+  largest_y = l_y;
+
+  long double differences[3] = {l_x-s_x, l_y-s_y, l_z-s_z};
   long double r;
 
   // finds centre of each x, y, and z
-  long double centre_x = smallest_x + differences[0]/2;
-  long double centre_y = smallest_y + differences[1]/2;
-  long double centre_z = smallest_z + differences[2]/2;
+  long double centre_x = s_x + differences[0]/2;
+  long double centre_y = s_y + differences[1]/2;
+  long double centre_z = s_z + differences[2]/2;
 
   // finds which one has the tallest distance, and therefore makes our radius
   if((differences[0]>differences[1]) && (differences[0]>differences[2])){
