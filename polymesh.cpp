@@ -240,6 +240,20 @@ void PolyMesh::triangle_intersection(Ray ray, Hit &hit, int which_triangle)
   hit.what = this;
   hit.position = p;
   hit.normal = normal;
+
+
+  hit.triangle[0].x = vertex[triangle[which_triangle][0]].x;
+  hit.triangle[0].y = vertex[triangle[which_triangle][0]].y;
+  hit.triangle[0].z = vertex[triangle[which_triangle][0]].z;
+
+  hit.triangle[1].x = vertex[triangle[which_triangle][1]].x;
+  hit.triangle[1].y = vertex[triangle[which_triangle][1]].y;
+  hit.triangle[1].z = vertex[triangle[which_triangle][1]].z;
+
+  hit.triangle[2].x = vertex[triangle[which_triangle][2]].x;
+  hit.triangle[2].y = vertex[triangle[which_triangle][2]].y;
+  hit.triangle[2].z = vertex[triangle[which_triangle][2]].z;
+
   return;
 }
 

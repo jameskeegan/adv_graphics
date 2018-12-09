@@ -1,17 +1,19 @@
 //
-// Subclass of Phong, basically the same but with perlin noise texture
+// Created by kegof on 09/12/2018.
 //
 
-#pragma once
-
+#include <iostream>
 #include "phong.h"
 #include "perlin_noise.h"
 
-class PhongTexture: public Phong {
+#pragma once
+
+using namespace std;
+
+class PhongTextureMesh: public Phong {
 
 public:
     PerlinNoise *perlin = new PerlinNoise();
-    Vertex sphere_centre;
 
     void compute_base_colour(Colour &result, Hit &hit);
     void compute_light_colour(Vector &viewer, Vector &normal, Vector &ldir, Colour &result);

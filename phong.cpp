@@ -11,7 +11,7 @@
 
 // A simple Phong based lighting model
 
-void Phong::compute_base_colour(Colour &result, Vertex &is)
+void Phong::compute_base_colour(Colour &result, Hit &hit)
 {
 	result.r = ambient.r;
 	result.g = ambient.g;

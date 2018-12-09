@@ -2,6 +2,7 @@
 // Created by kegof on 06/12/2018.
 //
 
+#include <fstream>
 #include <random>
 #include <algorithm>
 #include "perlin_noise.h"
@@ -12,8 +13,8 @@ using namespace std;
 PerlinNoise::PerlinNoise() {
     p.resize(256);
 
-    int height = 256;
-    int width = 256;
+    int height = dimensions;
+    int width = dimensions;
 
     iota(p.begin(), p.end(), 0);
 
@@ -35,7 +36,10 @@ PerlinNoise::PerlinNoise() {
             double y = (double)i/((double)height);
 
             // Typical Perlin noise
-            double n = noise(10 * x, 10 * y, 0.8);
+            //double n = noise(10 * x, 10 * y, 0.8);
+
+            double n = 20 * noise(x, y, 0.8);
+            n = n - floor(n);
 
             p_noise[i][j].r = n;
             p_noise[i][j].g = n;
@@ -43,7 +47,7 @@ PerlinNoise::PerlinNoise() {
         }
     }
 
-
+    write_framebuffer();
 
 }
 
@@ -90,4 +94,47 @@ double PerlinNoise::grad(int hash, double x, double y, double z) {
     double u = h < 8 ? x : y,
             v = h < 4 ? y : h == 12 || h == 14 ? x : z;
     return ((h & 1) == 0 ? u : -u) + ((h & 2) == 0 ? v : -v);
+}
+
+void PerlinNoise::write_framebuffer() {
+    int x, y;
+    std::ofstream fout;
+
+    fout.open("perlin_noise.ppm");
+
+    fout << "P6\r" << dimensions << " " << dimensions << "\r255\r";
+
+    for (y = 0; y < dimensions; y += 1) {
+        for (x = 0; x < dimensions; x += 1) {
+            long double red = 255.0 * p_noise[y][x].r;
+            long double green = 255.0 * p_noise[y][x].g;
+            long double blue = 255.0 * p_noise[y][x].b;
+
+            // checks if they don't equal " ", which breaks the ppm file
+            if (green > 6.0) {
+                if (green < 12.0) {
+                    green = 0.0;
+
+                }
+            }
+
+            if (red > 6.0) {
+                if (red < 12.0) {
+                    red = 0.0;
+
+                }
+            }
+
+            if (blue > 6.0) {
+                if (blue < 12.0) {
+                    blue = 0.0;
+
+                }
+            }
+
+            fout << (unsigned char) (red) << (unsigned char) (green) << (unsigned char) (blue);
+        }
+    }
+
+    fout.close();
 }

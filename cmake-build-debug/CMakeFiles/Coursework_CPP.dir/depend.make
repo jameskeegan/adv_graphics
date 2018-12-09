@@ -39,14 +39,18 @@ CMakeFiles/Coursework_CPP.dir/perlin_noise.cpp.obj: ../perlin_noise.cpp
 CMakeFiles/Coursework_CPP.dir/perlin_noise.cpp.obj: ../perlin_noise.h
 CMakeFiles/Coursework_CPP.dir/perlin_noise.cpp.obj: ../vector.h
 
+CMakeFiles/Coursework_CPP.dir/phong.cpp.obj: ../Vector.h
 CMakeFiles/Coursework_CPP.dir/phong.cpp.obj: ../colour.h
+CMakeFiles/Coursework_CPP.dir/phong.cpp.obj: ../hit.h
 CMakeFiles/Coursework_CPP.dir/phong.cpp.obj: ../material.h
 CMakeFiles/Coursework_CPP.dir/phong.cpp.obj: ../phong.cpp
 CMakeFiles/Coursework_CPP.dir/phong.cpp.obj: ../phong.h
 CMakeFiles/Coursework_CPP.dir/phong.cpp.obj: ../vector.h
 CMakeFiles/Coursework_CPP.dir/phong.cpp.obj: ../vertex.h
 
+CMakeFiles/Coursework_CPP.dir/phong_texture.cpp.obj: ../Vector.h
 CMakeFiles/Coursework_CPP.dir/phong_texture.cpp.obj: ../colour.h
+CMakeFiles/Coursework_CPP.dir/phong_texture.cpp.obj: ../hit.h
 CMakeFiles/Coursework_CPP.dir/phong_texture.cpp.obj: ../material.h
 CMakeFiles/Coursework_CPP.dir/phong_texture.cpp.obj: ../perlin_noise.h
 CMakeFiles/Coursework_CPP.dir/phong_texture.cpp.obj: ../phong.h
@@ -54,6 +58,17 @@ CMakeFiles/Coursework_CPP.dir/phong_texture.cpp.obj: ../phong_texture.cpp
 CMakeFiles/Coursework_CPP.dir/phong_texture.cpp.obj: ../phong_texture.h
 CMakeFiles/Coursework_CPP.dir/phong_texture.cpp.obj: ../vector.h
 CMakeFiles/Coursework_CPP.dir/phong_texture.cpp.obj: ../vertex.h
+
+CMakeFiles/Coursework_CPP.dir/phong_texture_mesh.cpp.obj: ../Vector.h
+CMakeFiles/Coursework_CPP.dir/phong_texture_mesh.cpp.obj: ../colour.h
+CMakeFiles/Coursework_CPP.dir/phong_texture_mesh.cpp.obj: ../hit.h
+CMakeFiles/Coursework_CPP.dir/phong_texture_mesh.cpp.obj: ../material.h
+CMakeFiles/Coursework_CPP.dir/phong_texture_mesh.cpp.obj: ../perlin_noise.h
+CMakeFiles/Coursework_CPP.dir/phong_texture_mesh.cpp.obj: ../phong.h
+CMakeFiles/Coursework_CPP.dir/phong_texture_mesh.cpp.obj: ../phong_texture_mesh.cpp
+CMakeFiles/Coursework_CPP.dir/phong_texture_mesh.cpp.obj: ../phong_texture_mesh.h
+CMakeFiles/Coursework_CPP.dir/phong_texture_mesh.cpp.obj: ../vector.h
+CMakeFiles/Coursework_CPP.dir/phong_texture_mesh.cpp.obj: ../vertex.h
 
 CMakeFiles/Coursework_CPP.dir/physical_light.cpp.obj: ../Vector.h
 CMakeFiles/Coursework_CPP.dir/physical_light.cpp.obj: ../colour.h

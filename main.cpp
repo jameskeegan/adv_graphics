@@ -25,8 +25,8 @@
 #include <thread>
 using namespace std;
 
-#define XSIZE 1024
-#define YSIZE 1024
+#define XSIZE 64
+#define YSIZE 64
 
 Colour framebuffer[YSIZE][XSIZE];
 
@@ -117,7 +117,7 @@ int main(int argc, char *argv[])
 	bp.specular.b = 0.0f;
 	bp.power = 40.0f;
 
-	bp.set_reflection(0.5);
+	bp.set_reflection(0.0);
 
 	Phong sp2;
 
@@ -132,20 +132,23 @@ int main(int argc, char *argv[])
 	sp2.specular.b = 0.0f;
 	sp2.power = 40.0f;
 
-	sp2.set_reflection(0.5);
+	sp2.set_reflection(0.0);
 
 	// creates phong with texture
 	PhongTexture tex;
 
-	tex.diffuse.r = 0.2f;
-	tex.diffuse.g = 0.2f;
-	tex.diffuse.b = 0.2f;
+	tex.ambient.r = 0.2f;
+	tex.ambient.g = 0.2f;
+	tex.ambient.b = 0.2f;
+	tex.diffuse.r = 0.4f;
+	tex.diffuse.g = 0.4f;
+	tex.diffuse.b = 0.4f;
 	tex.specular.r = 0.4f;
 	tex.specular.g = 0.4f;
 	tex.specular.b = 0.4f;
 	tex.power = 40.0f;
 
-	tex.set_reflection(0.0);
+	tex.set_reflection(0.2);
 
 	DirectionalLight *dl;
 
@@ -166,19 +169,23 @@ int main(int argc, char *argv[])
 
 	const char* mesh_name = "..//bunny_zipper.kcply";
 
-	//PolyMesh *bunny = new PolyMesh((char *) mesh_name, transform);
+	PolyMesh *bunny = new PolyMesh((char *) mesh_name, transform);
 
-	Sphere *sphere = new Sphere(Vertex(0,0,1.5), 1.0);
-	Sphere *sphere2 = new Sphere(Vertex(0, 1, 3), 1.0);
+	Sphere *sphere = new Sphere(Vertex(0,-1.5,3), 1.0);
+	Sphere *sphere2 = new Sphere(Vertex(0, 1.5, 3), 1.0);
 	//Sphere *sphere2 = new Sphere(Vertex(-0.168404, 0.101542, 2.01537), 0.778495*1.25);
+
+	tex.sphere_centre.x = sphere->center.x;
+	tex.sphere_centre.y = sphere->center.y;
+	tex.sphere_centre.z = sphere->center.z;
 
 	sphere->material = &tex;
 	sphere2->material = &sp2;
-	//bunny->material = &bp;
+	bunny->material = &bp;
 
-	//sphere->next = sphere2;
-	scene.object_list = sphere;
-	//scene.object_list = bunny;
+	sphere->next = sphere2;
+	//scene.object_list = sphere;
+	scene.object_list = bunny;
 	//scene.object_list = bunny;
 
 
@@ -189,7 +196,7 @@ int main(int argc, char *argv[])
 	int levels = 4;
 
 	// turns anti-aliasing on or off
-	bool aa = true;
+	bool aa = false;
 
 	// rate of AA - should be between 2 and 10 depending on AA level desired
 	int aa_rate = 4;

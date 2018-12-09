@@ -64,7 +64,7 @@ void Scene::raytrace(Ray ray, int level, Object *objects, Light *lights, Colour 
 	if (best_hit.flag)
 	{
 
-		best_hit.what->material->compute_base_colour(colour, best_hit.position);
+		best_hit.what->material->compute_base_colour(colour, best_hit);
 
 		Light *light = lights;
 

@@ -257,6 +257,33 @@ phong_texture.cpp.s:
 	$(MAKE) -f CMakeFiles\Coursework_CPP.dir\build.make CMakeFiles/Coursework_CPP.dir/phong_texture.cpp.s
 .PHONY : phong_texture.cpp.s
 
+phong_texture_mesh.obj: phong_texture_mesh.cpp.obj
+
+.PHONY : phong_texture_mesh.obj
+
+# target to build an object file
+phong_texture_mesh.cpp.obj:
+	$(MAKE) -f CMakeFiles\Coursework_CPP.dir\build.make CMakeFiles/Coursework_CPP.dir/phong_texture_mesh.cpp.obj
+.PHONY : phong_texture_mesh.cpp.obj
+
+phong_texture_mesh.i: phong_texture_mesh.cpp.i
+
+.PHONY : phong_texture_mesh.i
+
+# target to preprocess a source file
+phong_texture_mesh.cpp.i:
+	$(MAKE) -f CMakeFiles\Coursework_CPP.dir\build.make CMakeFiles/Coursework_CPP.dir/phong_texture_mesh.cpp.i
+.PHONY : phong_texture_mesh.cpp.i
+
+phong_texture_mesh.s: phong_texture_mesh.cpp.s
+
+.PHONY : phong_texture_mesh.s
+
+# target to generate assembly for a file
+phong_texture_mesh.cpp.s:
+	$(MAKE) -f CMakeFiles\Coursework_CPP.dir\build.make CMakeFiles/Coursework_CPP.dir/phong_texture_mesh.cpp.s
+.PHONY : phong_texture_mesh.cpp.s
+
 physical_light.obj: physical_light.cpp.obj
 
 .PHONY : physical_light.obj
@@ -389,6 +416,9 @@ help:
 	@echo ... phong_texture.obj
 	@echo ... phong_texture.i
 	@echo ... phong_texture.s
+	@echo ... phong_texture_mesh.obj
+	@echo ... phong_texture_mesh.i
+	@echo ... phong_texture_mesh.s
 	@echo ... physical_light.obj
 	@echo ... physical_light.i
 	@echo ... physical_light.s

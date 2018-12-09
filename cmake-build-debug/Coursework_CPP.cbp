@@ -184,6 +184,12 @@
 		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/phong_texture.h">
 			<Option target="Coursework_CPP"/>
 		</Unit>
+		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/phong_texture_mesh.cpp">
+			<Option target="Coursework_CPP"/>
+		</Unit>
+		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/phong_texture_mesh.h">
+			<Option target="Coursework_CPP"/>
+		</Unit>
 		<Unit filename="C:/Users/kegof/Documents/GitHub/adv_graphics/physical_light.cpp">
 			<Option target="Coursework_CPP"/>
 		</Unit>

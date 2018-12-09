@@ -8,6 +8,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Coursework_CPP.dir/physical_light.cpp.obj"
   "CMakeFiles/Coursework_CPP.dir/perlin_noise.cpp.obj"
   "CMakeFiles/Coursework_CPP.dir/phong_texture.cpp.obj"
+  "CMakeFiles/Coursework_CPP.dir/phong_texture_mesh.cpp.obj"
   "Coursework_CPP.pdb"
   "Coursework_CPP.exe"
   "Coursework_CPP.exe.manifest"

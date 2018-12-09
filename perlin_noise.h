@@ -16,12 +16,14 @@ class PerlinNoise{
 public:
     vector<int> p;
     unsigned int seed = 313;
-    Colour p_noise[256][256];
+    int dimensions = 1024;
+    Colour p_noise[1024][1024];
 
     PerlinNoise();
     double noise(double x, double y, double z);
 
 private:
+    void write_framebuffer();
     double fade(double t);
     double lerp(double t, double a, double b);
     double grad(int hash, double x, double y, double z);

@@ -22,4 +22,7 @@ public:
 	Object *what;
 	Vertex position;
 	Vector normal;
+
+	// three points of the intersected triangle (if we're using mesh)
+	Vector triangle[3];
 };

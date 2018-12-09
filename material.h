@@ -12,13 +12,14 @@
 #include "vector.h"
 #include "colour.h"
 #include "vertex.h"
+#include "hit.h"
 
 class Material {
 
 	Colour reflection;
 
 public:
-	virtual void compute_base_colour(Colour &result, Vertex &is)
+	virtual void compute_base_colour(Colour &result, Hit &hit)
 	{
 		result.r = 0.0f;
 		result.g = 0.0f;
