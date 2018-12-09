@@ -14,6 +14,7 @@
 #include "polymesh.h"
 #include "phong.h"
 #include "phong_texture.h"
+#include "phong_texture_mesh.h"
 #include "directional_light.h"
 #include "physical_light.h"
 #include "sphere.h"
@@ -25,8 +26,8 @@
 #include <thread>
 using namespace std;
 
-#define XSIZE 64
-#define YSIZE 64
+#define XSIZE 256
+#define YSIZE 256
 
 Colour framebuffer[YSIZE][XSIZE];
 
@@ -104,17 +105,17 @@ int main(int argc, char *argv[])
 
 	// loop over the pixels
 
-	Phong bp;
+	PhongTextureMesh bp;
 
 	bp.ambient.r = 0.2f;
-	bp.ambient.g = 0.0f;
-	bp.ambient.b = 0.0f;
+	bp.ambient.g = 0.2f;
+	bp.ambient.b = 0.2f;
 	bp.diffuse.r = 0.4f;
-	bp.diffuse.g = 0.0f;
-	bp.diffuse.b = 0.0f;
+	bp.diffuse.g = 0.4f;
+	bp.diffuse.b = 0.4f;
 	bp.specular.r = 0.4f;
-	bp.specular.g = 0.0f;
-	bp.specular.b = 0.0f;
+	bp.specular.g = 0.4f;
+	bp.specular.b = 0.4f;
 	bp.power = 40.0f;
 
 	bp.set_reflection(0.0);
@@ -210,7 +211,7 @@ int main(int argc, char *argv[])
 
 	for(y = 0; y < YSIZE; y += 1)
 	{
-		//cerr << "Line " << y+1 << " of " << (int)YSIZE << endl;
+		cerr << "Line " << y+1 << " of " << (int)YSIZE << endl;
 		long double py = (((long double)y / (long double)YSIZE) - 0.5)*-1.0; // 0.5 to -0.5, flipped y axis
 
 		for (x = 0; x < XSIZE; x += 1)

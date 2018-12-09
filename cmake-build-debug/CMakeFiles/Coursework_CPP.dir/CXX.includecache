@@ -12,12 +12,6 @@ math.h
 
 C:/Users/kegof/Documents/GitHub/adv_graphics/colour.h
 
-C:/Users/kegof/Documents/GitHub/adv_graphics/directional_light.cpp
-directional_light.h
-C:/Users/kegof/Documents/GitHub/adv_graphics/directional_light.h
-scene.h
-C:/Users/kegof/Documents/GitHub/adv_graphics/scene.h
-
 C:/Users/kegof/Documents/GitHub/adv_graphics/directional_light.h
 light.h
 C:/Users/kegof/Documents/GitHub/adv_graphics/light.h
@@ -47,6 +41,8 @@ phong.h
 C:/Users/kegof/Documents/GitHub/adv_graphics/phong.h
 phong_texture.h
 C:/Users/kegof/Documents/GitHub/adv_graphics/phong_texture.h
+phong_texture_mesh.h
+C:/Users/kegof/Documents/GitHub/adv_graphics/phong_texture_mesh.h
 directional_light.h
 C:/Users/kegof/Documents/GitHub/adv_graphics/directional_light.h
 physical_light.h
@@ -94,12 +90,6 @@ iostream
 vector
 -
 
-C:/Users/kegof/Documents/GitHub/adv_graphics/phong.cpp
-phong.h
-C:/Users/kegof/Documents/GitHub/adv_graphics/phong.h
-math.h
--
-
 C:/Users/kegof/Documents/GitHub/adv_graphics/phong.h
 material.h
 C:/Users/kegof/Documents/GitHub/adv_graphics/material.h
@@ -108,19 +98,11 @@ C:/Users/kegof/Documents/GitHub/adv_graphics/colour.h
 vector.h
 C:/Users/kegof/Documents/GitHub/adv_graphics/vector.h
 
-C:/Users/kegof/Documents/GitHub/adv_graphics/phong_texture.cpp
-phong_texture.h
-C:/Users/kegof/Documents/GitHub/adv_graphics/phong_texture.h
-
 C:/Users/kegof/Documents/GitHub/adv_graphics/phong_texture.h
 phong.h
 C:/Users/kegof/Documents/GitHub/adv_graphics/phong.h
 perlin_noise.h
 C:/Users/kegof/Documents/GitHub/adv_graphics/perlin_noise.h
-
-C:/Users/kegof/Documents/GitHub/adv_graphics/phong_texture_mesh.cpp
-phong_texture_mesh.h
-C:/Users/kegof/Documents/GitHub/adv_graphics/phong_texture_mesh.h
 
 C:/Users/kegof/Documents/GitHub/adv_graphics/phong_texture_mesh.h
 iostream
@@ -129,34 +111,10 @@ phong.h
 C:/Users/kegof/Documents/GitHub/adv_graphics/phong.h
 perlin_noise.h
 C:/Users/kegof/Documents/GitHub/adv_graphics/perlin_noise.h
-
-C:/Users/kegof/Documents/GitHub/adv_graphics/physical_light.cpp
-physical_light.h
-C:/Users/kegof/Documents/GitHub/adv_graphics/physical_light.h
-ray.h
-C:/Users/kegof/Documents/GitHub/adv_graphics/ray.h
-hit.h
-C:/Users/kegof/Documents/GitHub/adv_graphics/hit.h
-scene.h
-C:/Users/kegof/Documents/GitHub/adv_graphics/scene.h
 
 C:/Users/kegof/Documents/GitHub/adv_graphics/physical_light.h
 light.h
 C:/Users/kegof/Documents/GitHub/adv_graphics/light.h
-
-C:/Users/kegof/Documents/GitHub/adv_graphics/polymesh.cpp
-polymesh.h
-C:/Users/kegof/Documents/GitHub/adv_graphics/polymesh.h
-math.h
--
-iostream
--
-fstream
--
-string
--
-sstream
--
 
 C:/Users/kegof/Documents/GitHub/adv_graphics/polymesh.h
 vertex.h
@@ -176,10 +134,6 @@ C:/Users/kegof/Documents/GitHub/adv_graphics/vertex.h
 vector.h
 C:/Users/kegof/Documents/GitHub/adv_graphics/vector.h
 
-C:/Users/kegof/Documents/GitHub/adv_graphics/scene.cpp
-scene.h
-C:/Users/kegof/Documents/GitHub/adv_graphics/scene.h
-
 C:/Users/kegof/Documents/GitHub/adv_graphics/scene.h
 colour.h
 C:/Users/kegof/Documents/GitHub/adv_graphics/colour.h
@@ -191,12 +145,6 @@ light.h
 C:/Users/kegof/Documents/GitHub/adv_graphics/light.h
 hit.h
 C:/Users/kegof/Documents/GitHub/adv_graphics/hit.h
-
-C:/Users/kegof/Documents/GitHub/adv_graphics/sphere.cpp
-sphere.h
-C:/Users/kegof/Documents/GitHub/adv_graphics/sphere.h
-math.h
--
 
 C:/Users/kegof/Documents/GitHub/adv_graphics/sphere.h
 vertex.h
