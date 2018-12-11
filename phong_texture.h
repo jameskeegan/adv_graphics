@@ -15,4 +15,8 @@ public:
 
     void compute_base_colour(Colour &result, Hit &hit);
     void compute_light_colour(Vector &viewer, Vector &normal, Vector &ldir, Colour &result);
+
+    long double bi_interpolation(long double ord);
+
+    void bilinear_interpolation(long double u, long double d, Colour &i_result);
 };

@@ -133,7 +133,7 @@ int main(int argc, char *argv[])
 	sp2.specular.b = 0.0f;
 	sp2.power = 40.0f;
 
-	sp2.set_reflection(0.0);
+	sp2.set_reflection(0.2);
 
 	// creates phong with texture
 	PhongTexture tex;
@@ -172,7 +172,7 @@ int main(int argc, char *argv[])
 
 	PolyMesh *bunny = new PolyMesh((char *) mesh_name, transform);
 
-	Sphere *sphere = new Sphere(Vertex(0,-1.5,3), 1.0);
+	Sphere *sphere = new Sphere(Vertex(0,0.0,1.5), 1.0);
 	Sphere *sphere2 = new Sphere(Vertex(0, 1.5, 3), 1.0);
 	//Sphere *sphere2 = new Sphere(Vertex(-0.168404, 0.101542, 2.01537), 0.778495*1.25);
 
@@ -184,9 +184,9 @@ int main(int argc, char *argv[])
 	sphere2->material = &sp2;
 	bunny->material = &bp;
 
-	sphere->next = sphere2;
-	//scene.object_list = sphere;
-	scene.object_list = bunny;
+	//sphere->next = sphere2;
+	scene.object_list = sphere;
+	//scene.object_list = bunny;
 	//scene.object_list = bunny;
 
 
@@ -211,7 +211,7 @@ int main(int argc, char *argv[])
 
 	for(y = 0; y < YSIZE; y += 1)
 	{
-		cerr << "Line " << y+1 << " of " << (int)YSIZE << endl;
+		//cerr << "Line " << y+1 << " of " << (int)YSIZE << endl;
 		long double py = (((long double)y / (long double)YSIZE) - 0.5)*-1.0; // 0.5 to -0.5, flipped y axis
 
 		for (x = 0; x < XSIZE; x += 1)
