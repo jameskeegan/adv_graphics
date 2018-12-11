@@ -19,6 +19,8 @@ public:
 
 	Object *next;
 	Material *material;
+	long double smallest_x, smallest_y;
+	long double largest_x, largest_y;
 
 	Object()
 	{
