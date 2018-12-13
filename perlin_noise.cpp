@@ -11,6 +11,8 @@
 using namespace std;
 
 PerlinNoise::PerlinNoise() {
+
+
     p.resize(256);
 
     int height = dimensions;
@@ -30,16 +32,21 @@ PerlinNoise::PerlinNoise() {
 
     p.insert(p.end(), p.begin(), p.end());
 
-    for(int i=0; i < height; i++){
-        for(int j=0; j<width; j++){
-            double x = (double)j/((double)width);
-            double y = (double)i/((double)height);
+    for(int i=0; i < noiseHeight; i++){
+        for(int j=0; j<noiseWidth; j++){
+            double x = (double)j/((double)noiseWidth);
+            double y = (double)i/((double)noiseHeight);
 
             // Typical Perlin noise
             //double n = noise(10 * x, 10 * y, 0.8);
 
-            double n = 20 * noise(x, y, 0.8);
-            n = n - floor(n);
+            double xyValue = x + y + 1.0 * turbulence(j, i, 64.0);
+            double n = fabs(sin(xyValue * M_PI));
+
+            //double n = 20 * noise(x, y, 0.8);
+            //n = n - floor(n);
+
+            //cerr << n << endl;
 
             p_noise[i][j].r = n;
             p_noise[i][j].g = n;
@@ -78,6 +85,7 @@ double PerlinNoise::noise(double x, double y, double z) {
     // Add blended results from 8 corners of cube
     double res = lerp(w, lerp(v, lerp(u, grad(p[AA], x, y, z), grad(p[BA], x-1, y, z)), lerp(u, grad(p[AB], x, y-1, z), grad(p[BB], x-1, y-1, z))),	lerp(v, lerp(u, grad(p[AA+1], x, y, z-1), grad(p[BA+1], x-1, y, z-1)), lerp(u, grad(p[AB+1], x, y-1, z-1),	grad(p[BB+1], x-1, y-1, z-1))));
     return (res + 1.0)/2.0;
+    //return res;
 }
 
 double PerlinNoise::fade(double t) {
@@ -132,9 +140,30 @@ void PerlinNoise::write_framebuffer() {
                 }
             }
 
+            if(green > 255.0){
+                cerr << green << endl;
+            }else if(green < 0.0){
+                cerr << green << endl;
+            }
+
+
+
             fout << (unsigned char) (red) << (unsigned char) (green) << (unsigned char) (blue);
+
+            //cerr << green << endl;
         }
     }
 
     fout.close();
+}
+
+double PerlinNoise::turbulence(double x, double y, double size) {
+    double value = 0.0, initialSize = size;
+
+    while (size >= 1) {
+        value += fabs(noise(x / size, y / size, 0.0) * size);
+        size /= 2.0;
+    }
+
+    return 0.5 * value / initialSize;
 }

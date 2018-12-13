@@ -26,11 +26,11 @@ void PhongTexture::compute_base_colour(Colour &result, Hit &hit) {
 
     Colour inter_result;
 
-    bilinear_interpolation(u, v, inter_result);
+    //bilinear_interpolation(u, v, inter_result);
 
     // get the ordinates for the image
-    int u_int = (int) round(u);
-    int v_int = (int) round(v);
+    int u_int = (int) u;
+    int v_int = (int) v;
 
     // assign colour of pixel from perlin noise image to the pixel colour
 
@@ -44,6 +44,7 @@ void PhongTexture::compute_base_colour(Colour &result, Hit &hit) {
     result.r = perlin->p_noise[v_int][u_int].r * ambient.r;
     result.g = perlin->p_noise[v_int][u_int].g * ambient.g;
     result.b = perlin->p_noise[v_int][u_int].b * ambient.b;
+
 
 
 }

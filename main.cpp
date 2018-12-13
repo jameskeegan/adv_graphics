@@ -66,21 +66,21 @@ void write_framebuffer()
 			// checks if they don't equal " ", which breaks the ppm file
 			if(green > 6.0){
 			    if(green < 12.0){
-			        green = 0.0;
+			        green = 5.0;
 
 			    }
 			}
 
             if(red > 6.0){
                 if(red < 12.0){
-                    red = 0.0;
+                    red = 5.0;
 
                 }
             }
 
             if(blue > 6.0){
                 if(blue < 12.0){
-                    blue = 0.0;
+                    blue = 5.0;
 
                 }
             }
@@ -138,9 +138,9 @@ int main(int argc, char *argv[])
 	// creates phong with texture
 	PhongTexture tex;
 
-	tex.ambient.r = 0.2f;
-	tex.ambient.g = 0.2f;
-	tex.ambient.b = 0.2f;
+	tex.ambient.r = 0.5f;
+	tex.ambient.g = 0.5f;
+	tex.ambient.b = 0.5f;
 	tex.diffuse.r = 0.4f;
 	tex.diffuse.g = 0.4f;
 	tex.diffuse.b = 0.4f;

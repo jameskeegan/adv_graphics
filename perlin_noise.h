@@ -9,6 +9,9 @@
 #include <iostream>
 #include <vector>
 
+#define noiseWidth 1024
+#define noiseHeight 1024
+
 using namespace std;
 
 class PerlinNoise{
@@ -16,8 +19,8 @@ class PerlinNoise{
 public:
     vector<int> p;
     unsigned int seed = 313;
-    int dimensions = 1024;
-    Colour p_noise[1024][1024];
+    int dimensions = noiseWidth;
+    Colour p_noise[noiseWidth][noiseHeight];
 
     PerlinNoise();
     double noise(double x, double y, double z);
@@ -27,4 +30,5 @@ private:
     double fade(double t);
     double lerp(double t, double a, double b);
     double grad(int hash, double x, double y, double z);
+    double turbulence(double x, double y, double size);
 };
