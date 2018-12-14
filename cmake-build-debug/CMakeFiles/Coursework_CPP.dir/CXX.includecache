@@ -80,6 +80,16 @@ C:/Users/kegof/Documents/GitHub/adv_graphics/material.h
 iostream
 -
 
+C:/Users/kegof/Documents/GitHub/adv_graphics/perlin_noise.cpp
+fstream
+-
+algorithm
+-
+perlin_noise.h
+C:/Users/kegof/Documents/GitHub/adv_graphics/perlin_noise.h
+colour.h
+C:/Users/kegof/Documents/GitHub/adv_graphics/colour.h
+
 C:/Users/kegof/Documents/GitHub/adv_graphics/perlin_noise.h
 vector.h
 C:/Users/kegof/Documents/GitHub/adv_graphics/vector.h

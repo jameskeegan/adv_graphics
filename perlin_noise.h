@@ -1,5 +1,6 @@
 //
-// Created by kegof on 06/12/2018.
+// C++ implementation of Ken Perlin's code for Improved noise (COPYRIGHT 2002 KEN PERLIN)
+// Perlin's code is wrapped in this class so that it can be accessed like an object in my code
 //
 
 #pragma once
@@ -9,6 +10,7 @@
 #include <iostream>
 #include <vector>
 
+// width and height of final Perlin noise image
 #define noiseWidth 1024
 #define noiseHeight 1024
 
@@ -17,11 +19,16 @@ using namespace std;
 class PerlinNoise{
 
 public:
+    // contains the permutation values for the pseudorandom gradient selection
     vector<int> p;
-    unsigned int seed = 313;
+
+    // dimensions of the image, used for scaling later
     int dimensions = noiseWidth;
+
+    // creates framebuffer for perlin noise so that it can be stored and printed
     Colour p_noise[noiseWidth][noiseHeight];
 
+    // creates an instance of Perlin noise, creating an image
     PerlinNoise();
     double noise(double x, double y, double z);
 

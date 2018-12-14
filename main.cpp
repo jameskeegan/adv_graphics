@@ -26,8 +26,8 @@
 #include <thread>
 using namespace std;
 
-#define XSIZE 1024
-#define YSIZE 1024
+#define XSIZE 512
+#define YSIZE 512
 
 Colour framebuffer[YSIZE][XSIZE];
 
@@ -107,9 +107,9 @@ int main(int argc, char *argv[])
 
 	PhongTextureMesh bp;
 
-	bp.ambient.r = 0.2f;
-	bp.ambient.g = 0.2f;
-	bp.ambient.b = 0.2f;
+	bp.ambient.r = 0.4f;
+	bp.ambient.g = 0.4f;
+	bp.ambient.b = 0.4f;
 	bp.diffuse.r = 0.4f;
 	bp.diffuse.g = 0.4f;
 	bp.diffuse.b = 0.4f;
@@ -172,7 +172,7 @@ int main(int argc, char *argv[])
 
 	PolyMesh *bunny = new PolyMesh((char *) mesh_name, transform);
 
-	Sphere *sphere = new Sphere(Vertex(0,0.0,1.5), 1.0);
+	Sphere *sphere = new Sphere(Vertex(0,-1.5,3), 1.0);
 	Sphere *sphere2 = new Sphere(Vertex(0, 1.5, 3), 1.0);
 	//Sphere *sphere2 = new Sphere(Vertex(-0.168404, 0.101542, 2.01537), 0.778495*1.25);
 
@@ -184,7 +184,7 @@ int main(int argc, char *argv[])
 	sphere2->material = &sp2;
 	bunny->material = &bp;
 
-	//sphere->next = sphere2;
+	sphere->next = sphere2;
 	scene.object_list = sphere;
 	//scene.object_list = bunny;
 	//scene.object_list = bunny;
@@ -211,7 +211,7 @@ int main(int argc, char *argv[])
 
 	for(y = 0; y < YSIZE; y += 1)
 	{
-		//cerr << "Line " << y+1 << " of " << (int)YSIZE << endl;
+		cerr << "Line " << y+1 << " of " << (int)YSIZE << endl;
 		long double py = (((long double)y / (long double)YSIZE) - 0.5)*-1.0; // 0.5 to -0.5, flipped y axis
 
 		for (x = 0; x < XSIZE; x += 1)
