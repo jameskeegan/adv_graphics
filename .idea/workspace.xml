@@ -13,7 +13,10 @@
   <component name="ChangeListManager">
     <list default="true" id="052dabad-e9f2-4955-bb84-e300ff8593ab" name="Default Changelist" comment="gonna sign this off, may come back later">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Coursework_CPP.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Coursework_CPP.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Coursework_CPP.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Coursework_CPP.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Coursework_CPP.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Coursework_CPP.dir/depend.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Coursework_CPP.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Coursework_CPP.dir/main.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Coursework_CPP.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Coursework_CPP.dir/objects.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Coursework_CPP.dir/perlin_noise.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Coursework_CPP.dir/perlin_noise.cpp.obj" afterDir="false" />
@@ -25,6 +28,8 @@
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/perlin_noise.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/perlin_noise.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/perlin_noise.h" beforeDir="false" afterPath="$PROJECT_DIR$/perlin_noise.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/physical_light.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/physical_light.h" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -96,31 +101,31 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cpp" value="19817" />
-          <entry key="h" value="2774" />
+          <entry key="cpp" value="21478" />
+          <entry key="h" value="2986" />
           <entry key="txt" value="51" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Doxygen file" value="7" />
-          <entry key="ObjectiveC" value="22584" />
+          <entry key="ObjectiveC" value="24457" />
           <entry key="PLAIN_TEXT" value="51" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="Coursework_CPP (disassembly)" value="2" />
-          <entry key="cpp" value="53" />
-          <entry key="h" value="63" />
-          <entry key="ppm" value="38" />
+          <entry key="cpp" value="56" />
+          <entry key="h" value="65" />
+          <entry key="ppm" value="48" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Disassembly" value="2" />
-          <entry key="Image" value="38" />
-          <entry key="ObjectiveC" value="116" />
+          <entry key="Image" value="48" />
+          <entry key="ObjectiveC" value="121" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -135,33 +140,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cmake-build-debug/image_1024.ppm">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cmake-build-debug/perlin_noise.ppm">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/perlin_noise.cpp">
+        <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
+            <state relative-caret-position="287">
+              <caret line="24" column="17" lean-forward="true" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
               <folding>
-                <element signature="e#192#210#0" expanded="true" />
+                <element signature="e#412#430#0" expanded="true" />
+                <element signature="e#819#1031#0" />
+                <element signature="e#1033#1913#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main.cpp">
+        <entry file="file://$PROJECT_DIR$/perlin_noise.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="187" column="4" selection-start-line="187" selection-start-column="4" selection-end-line="187" selection-end-column="4" />
+            <state relative-caret-position="375">
+              <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -186,6 +183,9 @@
       <find>1.2</find>
       <find>cerr</find>
       <find>dl</find>
+      <find>perumtations</find>
+      <find>dimensions</find>
+      <find>dimension</find>
     </findStrings>
     <replaceStrings>
       <replace>long double</replace>
@@ -228,8 +228,8 @@
         <option value="$PROJECT_DIR$/phong_texture_mesh.cpp" />
         <option value="$PROJECT_DIR$/phong_texture.cpp" />
         <option value="$PROJECT_DIR$/perlin_noise.h" />
-        <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/perlin_noise.cpp" />
+        <option value="$PROJECT_DIR$/main.cpp" />
       </list>
     </option>
   </component>
@@ -256,11 +256,6 @@
             <path>
               <item name="Coursework_CPP" type="b2602c69:ProjectViewProjectNode" />
               <item name="adv_graphics" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Coursework_CPP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="adv_graphics" type="462c0819:PsiDirectoryNode" />
-              <item name="cmake-build-debug" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -343,23 +338,23 @@
       <workItem from="1544560230163" duration="1661000" />
       <workItem from="1544630946347" duration="1000" />
       <workItem from="1544706709213" duration="9645000" />
-      <workItem from="1544785939385" duration="3167000" />
+      <workItem from="1544785939385" duration="10927000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="140757000" />
+    <option name="totallyTimeSpent" value="148517000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="795" y="0" width="811" height="866" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.35856575" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23505977" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32789117" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.29387754" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.29387754" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.2722372" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -409,24 +404,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="gonna sign this off, may come back later" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5916" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/Coursework_CPP.cbp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2108">
-          <caret line="124" column="45" lean-forward="true" selection-start-line="124" selection-start-column="45" selection-end-line="124" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bunny_zipper.kcply">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bunny/bunny_zipper.kcply">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/x86_64-w64-mingw32/include/commctrl.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -557,13 +534,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/object.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/polymesh.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="439">
@@ -588,9 +558,6 @@
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/image_1024_only_bunny.ppm">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/image_1024 - texture bunny (8835 secs).ppm">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/image_1024_basic_texture_with_phong.ppm">
@@ -641,38 +608,65 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="444">
           <caret line="60" column="34" selection-start-line="60" selection-start-column="34" selection-end-line="60" selection-end-column="34" />
+          <folding>
+            <element signature="e#339#740#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/image_1024_no_interpolation.ppm">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/perlin_noise.h">
+    <entry file="file://$PROJECT_DIR$/object.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="35" column="9" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
+        <state relative-caret-position="323">
+          <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="187" column="4" selection-start-line="187" selection-start-column="4" selection-end-line="187" selection-end-column="4" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/perlin_noise_marble_x.ppm">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/perlin_noise_marble_xy.ppm">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/perlin_noise_basic.ppm">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/perlin_noise_marble_xy_power.ppm">
+      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/perlin_noise.ppm">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/perlin_noise.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="37" column="22" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/perlin_noise.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/image_1024 - texture bunny (8835 secs).ppm">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/image_1024.ppm">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/perlin_noise.cpp">
+    <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
+        <state relative-caret-position="287">
+          <caret line="24" column="17" lean-forward="true" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
           <folding>
-            <element signature="e#192#210#0" expanded="true" />
+            <element signature="e#412#430#0" expanded="true" />
+            <element signature="e#819#1031#0" />
+            <element signature="e#1033#1913#0" />
           </folding>
         </state>
       </provider>

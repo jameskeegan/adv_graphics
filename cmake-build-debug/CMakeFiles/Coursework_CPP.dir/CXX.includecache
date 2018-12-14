@@ -45,8 +45,6 @@ phong_texture_mesh.h
 C:/Users/kegof/Documents/GitHub/adv_graphics/phong_texture_mesh.h
 directional_light.h
 C:/Users/kegof/Documents/GitHub/adv_graphics/directional_light.h
-physical_light.h
-C:/Users/kegof/Documents/GitHub/adv_graphics/physical_light.h
 sphere.h
 C:/Users/kegof/Documents/GitHub/adv_graphics/sphere.h
 vertex.h
@@ -83,8 +81,6 @@ iostream
 C:/Users/kegof/Documents/GitHub/adv_graphics/perlin_noise.cpp
 fstream
 -
-algorithm
--
 perlin_noise.h
 C:/Users/kegof/Documents/GitHub/adv_graphics/perlin_noise.h
 colour.h
@@ -108,11 +104,21 @@ C:/Users/kegof/Documents/GitHub/adv_graphics/colour.h
 vector.h
 C:/Users/kegof/Documents/GitHub/adv_graphics/vector.h
 
+C:/Users/kegof/Documents/GitHub/adv_graphics/phong_texture.cpp
+phong_texture.h
+C:/Users/kegof/Documents/GitHub/adv_graphics/phong_texture.h
+
 C:/Users/kegof/Documents/GitHub/adv_graphics/phong_texture.h
 phong.h
 C:/Users/kegof/Documents/GitHub/adv_graphics/phong.h
 perlin_noise.h
 C:/Users/kegof/Documents/GitHub/adv_graphics/perlin_noise.h
+
+C:/Users/kegof/Documents/GitHub/adv_graphics/phong_texture_mesh.cpp
+phong_texture_mesh.h
+C:/Users/kegof/Documents/GitHub/adv_graphics/phong_texture_mesh.h
+object.h
+C:/Users/kegof/Documents/GitHub/adv_graphics/object.h
 
 C:/Users/kegof/Documents/GitHub/adv_graphics/phong_texture_mesh.h
 iostream
@@ -121,10 +127,6 @@ phong.h
 C:/Users/kegof/Documents/GitHub/adv_graphics/phong.h
 perlin_noise.h
 C:/Users/kegof/Documents/GitHub/adv_graphics/perlin_noise.h
-
-C:/Users/kegof/Documents/GitHub/adv_graphics/physical_light.h
-light.h
-C:/Users/kegof/Documents/GitHub/adv_graphics/light.h
 
 C:/Users/kegof/Documents/GitHub/adv_graphics/polymesh.h
 vertex.h
