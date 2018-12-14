@@ -26,7 +26,6 @@ CMakeFiles/Coursework_CPP.dir/main.cpp.obj: ../perlin_noise.h
 CMakeFiles/Coursework_CPP.dir/main.cpp.obj: ../phong.h
 CMakeFiles/Coursework_CPP.dir/main.cpp.obj: ../phong_texture.h
 CMakeFiles/Coursework_CPP.dir/main.cpp.obj: ../phong_texture_mesh.h
-CMakeFiles/Coursework_CPP.dir/main.cpp.obj: ../physical_light.h
 CMakeFiles/Coursework_CPP.dir/main.cpp.obj: ../polymesh.h
 CMakeFiles/Coursework_CPP.dir/main.cpp.obj: ../ray.h
 CMakeFiles/Coursework_CPP.dir/main.cpp.obj: ../scene.h

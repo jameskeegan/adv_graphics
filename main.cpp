@@ -16,7 +16,6 @@
 #include "phong_texture.h"
 #include "phong_texture_mesh.h"
 #include "directional_light.h"
-#include "physical_light.h"
 #include "sphere.h"
 #include "vertex.h"
 
@@ -26,8 +25,8 @@
 #include <thread>
 using namespace std;
 
-#define XSIZE 1024
-#define YSIZE 1024
+#define XSIZE 512
+#define YSIZE 512
 
 Colour framebuffer[YSIZE][XSIZE];
 
@@ -66,21 +65,21 @@ void write_framebuffer()
 			// checks if they don't equal " ", which breaks the ppm file
 			if(green > 6.0){
 			    if(green < 12.0){
-			        green = 0.0;
+			        green = 5.0;
 
 			    }
 			}
 
             if(red > 6.0){
                 if(red < 12.0){
-                    red = 0.0;
+                    red = 5.0;
 
                 }
             }
 
             if(blue > 6.0){
                 if(blue < 12.0){
-                    blue = 0.0;
+                    blue = 5.0;
 
                 }
             }
@@ -94,10 +93,11 @@ void write_framebuffer()
 
 int main(int argc, char *argv[])
 {
-
+	// clock so that I can check how long my code runs for
     clock_t start = clock();
     long double time;
 
+    // create the scene
 	Scene scene;
 	int x, y;
 
@@ -105,11 +105,12 @@ int main(int argc, char *argv[])
 
 	// loop over the pixels
 
+	// texture mesh for the bunny
 	PhongTextureMesh bp;
 
-	bp.ambient.r = 0.2f;
-	bp.ambient.g = 0.2f;
-	bp.ambient.b = 0.2f;
+	bp.ambient.r = 0.4f;
+	bp.ambient.g = 0.4f;
+	bp.ambient.b = 0.4f;
 	bp.diffuse.r = 0.4f;
 	bp.diffuse.g = 0.4f;
 	bp.diffuse.b = 0.4f;
@@ -120,6 +121,7 @@ int main(int argc, char *argv[])
 
 	bp.set_reflection(0.0);
 
+	// standard phong for a sphere or mesh
 	Phong sp2;
 
 	sp2.ambient.r = 0.0f;
@@ -135,12 +137,12 @@ int main(int argc, char *argv[])
 
 	sp2.set_reflection(0.2);
 
-	// creates phong with texture
+	// creates phong with texture for spheres
 	PhongTexture tex;
 
-	tex.ambient.r = 0.2f;
-	tex.ambient.g = 0.2f;
-	tex.ambient.b = 0.2f;
+	tex.ambient.r = 0.5f;
+	tex.ambient.g = 0.5f;
+	tex.ambient.b = 0.5f;
 	tex.diffuse.r = 0.4f;
 	tex.diffuse.g = 0.4f;
 	tex.diffuse.b = 0.4f;
@@ -152,14 +154,8 @@ int main(int argc, char *argv[])
 	tex.set_reflection(0.2);
 
 	DirectionalLight *dl;
-
 	dl = new DirectionalLight(Vector(0.0f, 0.0f, 1.0f),Colour(0.5, 0.5, 0.5, 0.0));
-
 	dl->scene = &scene;
-
-	// point light
-	PhysicalLight *pl = new PhysicalLight(Vector(0.0,0.0,0.0),Vector(0.0, 0.0, 1.0), Colour(0.5,0.5,0.5, 0.0));
-	pl->scene = &scene;
 
 	scene.light_list = dl;
 
@@ -172,10 +168,11 @@ int main(int argc, char *argv[])
 
 	PolyMesh *bunny = new PolyMesh((char *) mesh_name, transform);
 
-	Sphere *sphere = new Sphere(Vertex(0,0.0,1.5), 1.0);
+	Sphere *sphere = new Sphere(Vertex(0,-1.5,3), 1.0);
 	Sphere *sphere2 = new Sphere(Vertex(0, 1.5, 3), 1.0);
 	//Sphere *sphere2 = new Sphere(Vertex(-0.168404, 0.101542, 2.01537), 0.778495*1.25);
 
+	// makes centre of sphere known so that it can be used for later texture calculatiosn
 	tex.sphere_centre.x = sphere->center.x;
 	tex.sphere_centre.y = sphere->center.y;
 	tex.sphere_centre.z = sphere->center.z;
@@ -184,14 +181,10 @@ int main(int argc, char *argv[])
 	sphere2->material = &sp2;
 	bunny->material = &bp;
 
-	//sphere->next = sphere2;
+	sphere->next = sphere2;
 	scene.object_list = sphere;
 	//scene.object_list = bunny;
 	//scene.object_list = bunny;
-
-
-
-	//bunny->make_bounding_sphere();
 
 	// number of reflection levels to go down
 	int levels = 4;
@@ -211,13 +204,11 @@ int main(int argc, char *argv[])
 
 	for(y = 0; y < YSIZE; y += 1)
 	{
-		//cerr << "Line " << y+1 << " of " << (int)YSIZE << endl;
+		cerr << "Line " << y+1 << " of " << (int)YSIZE << endl;
 		long double py = (((long double)y / (long double)YSIZE) - 0.5)*-1.0; // 0.5 to -0.5, flipped y axis
 
 		for (x = 0; x < XSIZE; x += 1)
 		{
-			//cerr << "Line " << y+1 << ", pixel " << x+1 << " of " << (int)YSIZE << endl;
-
 		    // aa is a bool which indicates whether or not to use anti-aliasing
 		    if(aa){
 
@@ -279,9 +270,9 @@ int main(int argc, char *argv[])
    }
 
 	time = (clock()-start)/ (long double) CLOCKS_PER_SEC;
+	cerr << "Done in " << time << " seconds" << endl;
 
-	cerr << "Done in " << time << "seconds" << endl;
-
+	// creates image "perlin_noise.ppm" for full Perlin noise texture
 	write_framebuffer();
 
 }
